@@ -1,0 +1,169 @@
+# $HOME/.i3/config
+# bl1nk - http://kuchen.io
+# vim:filetype=i3
+
+set $m Mod1
+bindsym $m+Return exec --no-startup-id urxvt
+bindsym Print exec teiler
+
+# fonts & colors {{{
+font -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+
+# class                 border  backgr  text    indicator
+client.focused          #505050 #505050 #ffffff #505050
+client.focused_inactive #505050 #202020 #808080 #404040
+client.unfocused        #303030 #202020 #808080 #404040
+client.urgent           #AC4142 #AC4142 #ffffff
+client.background #080808
+# }}}
+# bars {{{
+bar {
+	output HDMI2
+	tray_output HDMI2
+	mode dock
+	Modifier Mod1
+	position top
+	workspace_buttons yes
+	colors {
+		background #080808
+		statusline #808080
+		separator #404040
+		#                  border  backgr  text
+		focused_workspace  #a6a6de #080808 #ffffff
+		active_workspace   #ffaf5f #080808 #ffffff
+		inactive_workspace #404040 #080808 #808080
+		urgent_workspace   #ea8484 #080808 #ffffff
+	}
+	status_command $HOME/bin/i3conky
+}
+bar {
+	output HDMI1
+	tray_output none
+	mode dock
+	position top
+	workspace_buttons yes
+	colors {
+		background #080808
+		statusline #808080
+		separator #404040
+		# border background text
+		focused_workspace  #a6a6de #080808 #ffffff
+		active_workspace   #ffaf5f #080808 #ffffff
+		inactive_workspace #404040 #080808 #808080
+		urgent_workspace   #ea8484 #080808 #ffffff
+	}
+	status_command $HOME/bin/i3conky_secondary
+}
+# }}}
+# windows {{{
+bindsym $m+h focus left
+bindsym $m+j focus down
+bindsym $m+k focus up
+bindsym $m+l focus right
+bindsym $m+Shift+H move left
+bindsym $m+Shift+J move down
+bindsym $m+Shift+K move up
+bindsym $m+Shift+L move right
+bindsym $m+a focus parent
+bindsym $m+d focus child
+bindsym $m+Q kill
+
+new_float pixel 2
+new_window pixel 2
+hide_edge_borders none
+force_display_urgency_hint 1000 ms
+focus_follows_mouse no
+# }}}
+# containers {{{
+bindsym $m+o split h
+bindsym $m+u split v
+bindsym $m+f fullscreen
+bindsym $m+s layout stacking
+bindsym $m+w layout tabbed
+bindsym $m+e layout default
+
+floating_modifier $m
+bindsym $m+space focus mode_toggle
+bindsym $m+Shift+space floating toggle
+bindsym $m+backslash scratchpad show
+bindsym $m+Shift+backslash move scratchpad
+
+default_orientation vertical
+# }}}
+# workspaces {{{
+bindsym $m+1 workspace 1
+bindsym $m+2 workspace 2
+bindsym $m+3 workspace 3
+bindsym $m+4 workspace 4
+bindsym $m+5 workspace 5
+bindsym $m+6 workspace 6
+bindsym $m+7 workspace 7
+bindsym $m+8 workspace 8
+bindsym $m+9 workspace 9
+bindsym $m+0 workspace 10
+bindsym $m+Shift+1 move container to workspace 1
+bindsym $m+Shift+2 move container to workspace 2
+bindsym $m+Shift+3 move container to workspace 3
+bindsym $m+Shift+4 move container to workspace 4
+bindsym $m+Shift+5 move container to workspace 5
+bindsym $m+Shift+6 move container to workspace 6
+bindsym $m+Shift+7 move container to workspace 7
+bindsym $m+Shift+8 move container to workspace 8
+bindsym $m+Shift+9 move container to workspace 9
+bindsym $m+Shift+0 move container to workspace 10
+bindsym $m+comma move container to output left
+bindsym $m+period move container to output right
+bindsym $m+Shift+comma move workspace to output left
+bindsym $m+Shift+period move workspace to output right
+
+workspace_auto_back_and_forth no
+workspace_layout default
+# }}}
+# modes {{{
+mode "(E)xit, (R)eboot, (P)oweroff" {
+    bindsym e exit
+    bindsym r exec sudo systemctl reboot
+    bindsym p exec sudo systemctl poweroff
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $m+Shift+E mode "(E)xit, (R)eboot, (P)oweroff"
+bindsym $m+Shift+C reload
+bindsym $m+Shift+R restart
+
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym 113 resize shrink width 10 px or 10 ppt
+    bindsym 116 resize grow height 10 px or 10 ppt
+    bindsym 111 resize shrink height 10 px or 10 ppt
+    bindsym 114 resize grow width 10 px or 10 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $m+r mode "resize"
+# }}}
+# rules {{{
+workspace 1 output HDMI2
+workspace 2 output HDMI1
+workspace 3 output HDMI2
+workspace 4 output HDMI1
+workspace 5 output HDMI2
+workspace 6 output HDMI1
+workspace 7 output HDMI2
+workspace 8 output HDMI1
+workspace 9 output HDMI2
+workspace 0 output HDMI1
+for_window [class="(XFontSel|feh|Wine|Steam|hl_linux|net-minecraft-LauncherFrame|MPlayer)"] floating enable
+for_window [title="Customize Look and Feel"] floating enable
+# }}}
+# autostart {{{
+exec dunst
+exec simpleswitcher -key mod1+Tab -rkey Mod1+p -bg "#080808" -bc "#ffaf5f" -bw 1 -fg "#808080" -font terminus-14:medium -hlbg "#080808" -hlfg "#ea8484" -width 30 -term urxvt -loc 2 -padding 10 -lines 25
+exec sh $HOME/.fehbg
+# }}}
+
