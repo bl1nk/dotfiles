@@ -13,7 +13,7 @@ font -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
 client.focused          #505050 #505050 #ffffff #505050
 client.focused_inactive #505050 #202020 #808080 #404040
 client.unfocused        #303030 #202020 #808080 #404040
-client.urgent           #AC4142 #AC4142 #ffffff
+client.urgent           #ea8484 #ea8484 #ffffff
 client.background #080808
 # }}}
 # bars {{{
@@ -30,7 +30,7 @@ bar {
 		separator #404040
 		#                  border  backgr  text
 		focused_workspace  #a6a6de #080808 #ffffff
-		active_workspace   #404040 #080808 #c7f09f
+		active_workspace   #6e6ec9 #080808 #808080
 		inactive_workspace #404040 #080808 #808080
 		urgent_workspace   #ea8484 #080808 #ffffff
 	}
@@ -48,7 +48,7 @@ bar {
 		separator #404040
 		# border background text
 		focused_workspace  #a6a6de #080808 #ffffff
-		active_workspace   #404040 #080808 #c7f09f
+		active_workspace   #6e6ec9 #080808 #808080
 		inactive_workspace #404040 #080808 #808080
 		urgent_workspace   #ea8484 #080808 #ffffff
 	}

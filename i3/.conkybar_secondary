@@ -19,7 +19,7 @@ TEXT
 [
 
 {
-	"full_text": "${if_mpd_playing}${mpd_smart}",
+	"full_text": "${if_mpd_playing}${mpd_smart}${else}Silence${endif}",
 	"align": "center",
 	"color": "\#ffcc9a"
 },
