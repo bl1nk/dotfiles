@@ -1,0 +1,35 @@
+# $HOME/.conkyrc
+# bl1nk - http://kuchen.io
+
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+update_interval 2.0
+total_run_times 0
+short_units yes
+if_up_strictness address
+use_spacer none
+override_utf8_locale no
+cpu_avg_samples 2
+
+TEXT
+
+[
+
+{
+	"full_text": "${time %H:%M}",
+	"color": "\#ffaf5f",
+	"min_width": "00:00",
+	"align": "center"
+},
+{
+	"full_text": "${time %a, %d. %b}",
+	"color": "\#ea8484",
+	"min_width": "Mon, 23. Dez",
+	"align": "center"
+}
+
+],
+
