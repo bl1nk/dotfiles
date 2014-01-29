@@ -1,0 +1,10 @@
+# $HOME/.mpv/config
+# bl1nk - http://kuchen.io
+
+geometry=50%:50%
+autofit-larger=75%x75%
+hwdec = auto
+title="${filename}"
+vo=opengl,vaapi,vdpau
+
+
