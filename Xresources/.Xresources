@@ -44,6 +44,7 @@ URxvt.cursorBlink:           true
 URxvt.cursorColor:           #0087af
 URxvt.internalBorder:        5
 URxvt.borderColor:           #080808
+URxvt.pointerBlank:          true
 
 Xft.dpi:        96
 Xft.antialias:  true
