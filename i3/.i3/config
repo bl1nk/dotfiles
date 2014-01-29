@@ -30,7 +30,7 @@ bar {
 		separator #404040
 		#                  border  backgr  text
 		focused_workspace  #a6a6de #080808 #ffffff
-		active_workspace   #6e6ec9 #080808 #808080
+		active_workspace   #404040 #080808 #a6a6de
 		inactive_workspace #404040 #080808 #808080
 		urgent_workspace   #ea8484 #080808 #ffffff
 	}
@@ -46,9 +46,9 @@ bar {
 		background #080808
 		statusline #808080
 		separator #404040
-		# border background text
+		#                  border  backgr  text
 		focused_workspace  #a6a6de #080808 #ffffff
-		active_workspace   #6e6ec9 #080808 #808080
+		active_workspace   #404040 #080808 #a6a6de
 		inactive_workspace #404040 #080808 #808080
 		urgent_workspace   #ea8484 #080808 #ffffff
 	}
@@ -163,7 +163,7 @@ for_window [title="Customize Look and Feel"] floating enable
 # }}}
 # autostart {{{
 exec dunst
-exec simpleswitcher -key mod1+Tab -rkey Mod1+p -bg "#080808" -bc "#ffaf5f" -bw 1 -fg "#808080" -font terminus-14:medium -hlbg "#080808" -hlfg "#ea8484" -width 30 -term urxvt -loc 2 -padding 10 -lines 25
+exec simpleswitcher -key mod1+Tab -rkey Mod1+p -bg "#080808" -bc "#080808" -bw 0 -fg "#808080" -font terminus-8:medium -hlbg "#080808" -hlfg "#ea8484" -width 30 -term urxvt -loc 2 -padding 10 -lines 10
 exec sh $HOME/.fehbg
 # }}}
 
