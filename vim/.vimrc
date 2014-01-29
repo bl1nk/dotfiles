@@ -98,6 +98,9 @@ vnoremap <Space> za
 
 nmap ; :CtrlPBuffer<CR>
 
+nnoremap <leader>1 yypVr=
+nnoremap <leader>2 yypVr-
+
 " }}}
 " Source the vimrc file after saving it {{{
 
