@@ -21,6 +21,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tpope/vim-surround'
 Bundle 'rking/ag.vim'
 Bundle 'mattn/emmet-vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'PotatoesMaster/i3-vim-syntax'
 
 " plugin settings {{{
@@ -67,7 +68,7 @@ colorscheme jellybeans
 set background=dark
 if has("gui_running")
 	set guioptions=aegimLt
-	set guifont=Termsyn\ 12
+	set guifont=PragmataPro:h14
 endif
 set t_Co=256
 
