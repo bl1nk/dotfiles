@@ -11,8 +11,8 @@ font -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
 
 # class                 border  backgr  text    indicator
 client.focused          #87af5f #87af5f #ffffff #87af5f
-client.focused_inactive #404040 #202020 #808080 #404040
-client.unfocused        #303030 #202020 #808080 #404040
+client.focused_inactive #404040 #404040 #808080 #404040
+client.unfocused        #202020 #202020 #808080 #404040
 client.urgent           #ea8484 #ea8484 #ffffff
 client.background #080808
 
@@ -72,8 +72,8 @@ bindsym $m+a focus parent
 bindsym $m+d focus child
 bindsym $m+Q kill
 
-new_float pixel 1
-new_window pixel 1
+new_float normal 2
+new_window normal 2
 hide_edge_borders none
 force_display_urgency_hint 1000 ms
 focus_follows_mouse no
