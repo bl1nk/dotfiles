@@ -69,7 +69,7 @@ precmd() {
 	if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
 		zstyle ':vcs_info:*' formats "%{${reset_color}%} %b%c%u%{${reset_color}%}"
 	} else {
-	zstyle ':vcs_info:*' formats "%{${reset_color}%} %b%c%u%{${fg_no_bold[red]}%}!%{$reset_color%}"
+	zstyle ':vcs_info:*' formats "%{${reset_color}%} %b%c%u%{${fg_no_bold[red]}%} !%{$reset_color%}"
 	}
 
 	vcs_info
@@ -175,8 +175,8 @@ zstyle ':completion:*' completer _complete _match _approximate _7slash
 zstyle ':completion:*:match:*' original only
 
 # allow more mistypes if longer command
-#zstyle -e ':completion:*:approximate:*' \
-	#        max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+zstyle -e ':completion:*:approximate:*' \
+	max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
 
 # ignore completion for commands we don't have
 zstyle ':completion:*:functions' ignored-patterns '_*'
@@ -379,8 +379,8 @@ ${_main}%{$reset_color%} %{$fg_bold[green]%}%~
 autoload -Uz vcs_info
 
 # set style for vcs info
-zstyle ':vcs_info:*' stagedstr "%{${fg_no_bold[blue]}%}?%{$reset_color%}"
-zstyle ':vcs_info:*' unstagedstr "%{${fg_no_bold[yellow]}%}?%{$reset_color%}"
+zstyle ':vcs_info:*' stagedstr "%{${fg_no_bold[blue]}%} ?%{$reset_color%}"
+zstyle ':vcs_info:*' unstagedstr "%{${fg_no_bold[yellow]}%} ?%{$reset_color%}"
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git svn
