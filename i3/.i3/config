@@ -4,16 +4,17 @@
 set $m Mod1
 bindsym $m+Return exec --no-startup-id urxvt
 bindsym Print exec teiler
+bindsym $m+p exec dmenu_run -i -l 10 -h 18 -p "$" -fn "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*" -x 690 -w 300 -nb "#080808" -nf "#808080" -sb "#080808" -sf "#ea8484"
 
 # fonts & colors {{{
 
 font -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
 
 # class                 border  backgr  text    indicator
-client.focused          #87af5f #87af5f #ffffff #87af5f
+client.focused          #a6a6de #a6a6de #000000 #a6a6de
 client.focused_inactive #404040 #404040 #808080 #404040
 client.unfocused        #202020 #202020 #808080 #404040
-client.urgent           #ea8484 #ea8484 #ffffff
+client.urgent           #ea8484 #ea8484 #000000
 client.background #080808
 
 # }}}
@@ -172,12 +173,12 @@ workspace 9 output HDMI2
 workspace 0 output HDMI1
 for_window [class="(XFontSel|feh|Wine|Steam|hl_linux|net-minecraft-LauncherFrame|MPlayer)"] floating enable
 for_window [title="Customize Look and Feel"] floating enable
+for_window [class="Corebird"] border none
 
 # }}}
 # autostart {{{
 
 exec dunst
-exec simpleswitcher -key mod1+Tab -rkey Mod1+p -bg "#080808" -bc "#080808" -bw 0 -fg "#808080" -font terminus-8:medium -hlbg "#080808" -hlfg "#ea8484" -width 30 -term urxvt -loc 2 -padding 10 -lines 10
 exec sh $HOME/.fehbg
 
 # }}}
@@ -187,6 +188,8 @@ bindsym Mod3+Insert exec mpc toggle
 bindsym Mod3+Home   exec mpc stop
 bindsym Mod3+Delete exec mpc prev
 bindsym Mod3+End    exec mpc next
+bindsym Mod3+Prior  exec ponymix increase 10
+bindsym Mod3+Next   exec ponymix decrease 10
 
 # }}}
 
