@@ -124,7 +124,7 @@
     browser = /usr/bin/dwb
 
 [frame]
-    width = 1
+    width = 2
     color = "#87af5f"
 
 [shortcuts]
