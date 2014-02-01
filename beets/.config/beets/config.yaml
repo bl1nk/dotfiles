@@ -1,0 +1,14 @@
+directory:      ~/music
+library:        ~/.config/beets/library.blb
+plugins:        scrub zero web
+original_date:  yes
+threaded:       no
+paths:
+    default: $albumartist/($year) $album%aunique{}/$track - $title
+    singleton: Non-Album/$artist/$title
+    comp: Compilations/($year) $album%aunique{}/$track - $artist - $title
+import:
+    move:     yes
+zero:
+    fields:     month day comments
+
