@@ -64,6 +64,15 @@ precmd() {
 	if [[ "$TERM" == xterm* ]] || [[ $TERM == rxvt* ]] || [[ $TERM == ansi ]] || [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
 		printf "\33]2;$USER@$HOST: ${PWD/#$HOME/~}\007" $1
 	fi
+
+	# git prompt
+	if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+		zstyle ':vcs_info:*' formats "%{${reset_color}%} %b%c%u%{${reset_color}%}"
+	} else {
+	zstyle ':vcs_info:*' formats "%{${reset_color}%} %b%c%u%{${fg_no_bold[red]}%}!%{$reset_color%}"
+	}
+
+	vcs_info
 }
 autoload -U colors
 colors
@@ -72,6 +81,10 @@ autoload -U zmv
 
 # .. -> cd ../
 setopt autocd
+
+# make / and . work as delimiter for ^w
+autoload -U select-word-style
+select-word-style bash
 
 # cd /etc/**/foo/blub searches ;)
 setopt extendedglob
@@ -361,6 +374,18 @@ fi
 PROMPT="
 ${_main}%{$reset_color%} %{$fg_bold[green]%}%~
 %{$fg_no_bold[red]%}─╼%{$reset_color%} "
+
+# load module
+autoload -Uz vcs_info
+
+# set style for vcs info
+zstyle ':vcs_info:*' stagedstr "%{${fg_no_bold[blue]}%}?%{$reset_color%}"
+zstyle ':vcs_info:*' unstagedstr "%{${fg_no_bold[yellow]}%}?%{$reset_color%}"
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
+zstyle ':vcs_info:*' enable git svn
+
+RPROMPT="\${vcs_info_msg_0_}"
 
 # }}}
 # env {{{
