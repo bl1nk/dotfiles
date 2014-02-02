@@ -408,3 +408,6 @@ alias wgetc="wget --content-disposition"
 # }}}
 
 source $HOME/.zshrc.$HOST.local
+stty echo
+
+# vim: set ft=zsh:
