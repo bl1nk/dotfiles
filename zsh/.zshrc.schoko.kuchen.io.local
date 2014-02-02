@@ -1,0 +1,15 @@
+# $HOME/.zshrc.local
+# bl1nk - http://kuchen.io
+
+# env {{{
+BROWSER=chromium
+
+export BROWSER
+
+# }}}
+# aliases {{{
+
+alias p='s pacman '
+alias sc='s systemctl'
+
+# }}}
