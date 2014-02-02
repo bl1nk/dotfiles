@@ -67,9 +67,9 @@ precmd() {
 
 	# git prompt
 	if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-		zstyle ':vcs_info:*' formats "%{${reset_color}%} %b%c%u%{${reset_color}%}"
+		zstyle ':vcs_info:*' formats "%{${fg_no_bold[blue]}%} %b%c%u%{${reset_color}%}"
 	} else {
-	zstyle ':vcs_info:*' formats "%{${reset_color}%} %b%c%u%{${fg_no_bold[red]}%} !%{$reset_color%}"
+	zstyle ':vcs_info:*' formats "%{${fg_no_bold[blue]}%} %b%c%u%{${fg_no_bold[red]}%} !%{$reset_color%}"
 	}
 
 	vcs_info
@@ -365,16 +365,6 @@ function f() {
 # }}}
 # prompt {{{
 
-if [ $USER = "markus" ]; then
-	_main="%{$fg_no_bold[yellow]%}%m"
-else
-	_main="%{$fg_no_bold[magenta]%}%n%{$reset_color%}@%{$fg_no_bold[yellow]%}%m"
-fi
-
-PROMPT="
-${_main}%{$reset_color%} %{$fg_bold[green]%}%~
-%{$fg_no_bold[red]%}─╼%{$reset_color%} "
-
 # load module
 autoload -Uz vcs_info
 
@@ -385,7 +375,15 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git svn
 
-RPROMPT="\${vcs_info_msg_0_}"
+if [ $USER = "markus" ]; then
+	_main="%{$fg_no_bold[yellow]%}%m"
+else
+	_main="%{$fg_no_bold[magenta]%}%n%{$reset_color%}@%{$fg_no_bold[yellow]%}%m"
+fi
+
+PROMPT="
+${_main}%{$reset_color%} %{$fg_bold[green]%}%~\${vcs_info_msg_0_}
+%{$fg_no_bold[red]%}─╼%{$reset_color%} "
 
 # }}}
 # env {{{
