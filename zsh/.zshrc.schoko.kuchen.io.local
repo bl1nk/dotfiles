@@ -2,9 +2,6 @@
 # bl1nk - http://kuchen.io
 
 # env {{{
-BROWSER=chromium
-
-export BROWSER
 
 # }}}
 # aliases {{{
