@@ -297,25 +297,6 @@ export CYAN='\e[1;36m'
 export black='\e[0;37m'
 export BLACK='\e[1;37m'
 
-# these are for use in PROMPT
-p_nc=$'%{\e[0m%}'
-p_white=$'%{\e[0;30m%}'
-p_WHITE=$'%{\e[1;30m%}'
-p_red=$'%{\e[0;31m%}'
-p_RED=$'%{\e[1;31m%}'
-p_green=$'%{\e[0;32m%}'
-p_GREEN=$'%{\e[1;32m%}'
-p_yellow=$'%{\e[0;33m%}'
-p_YELLOW=$'%{\e[1;33m%}'
-p_blue=$'%{\e[0;34m%}'
-p_BLUE=$'%{\e[1;34m%}'
-p_magenta=$'%{\e[0;35m%}'
-p_MAGENTA=$'%{\e[1;35m%}'
-p_cyan=$'%{\e[0;36m%}'
-p_CYAN=$'%{\e[1;36m%}'
-p_black=$'%{\e[0;37m%}'
-p_white=$'%{\e[1;37m%}'
-
 # colors in framebuffer!
 if [[ $TERM = "linux" ]]; then
 	${HOME}/bin/parse_xdefaults.sh
@@ -393,17 +374,15 @@ PATH=$HOME/bin:$PATH
 VISUAL=vim
 EDITOR=vim
 PAGER=less
-BROWSER=chromium
 LESSCHARSET="UTF-8"
 TIME_STYLE=long-iso
 
-export PATH VISUAL EDITOR PAGER BROWSER LESSCHARSET TIME_STYLE
+export PATH VISUAL EDITOR PAGER LESSCHARSET TIME_STYLE
 
 # }}}
 # aliases {{{
 
 alias s='sudo '
-alias p='s pacman '
 alias v='vim '
 alias sv='s vim '
 alias t='tmux attach'
@@ -417,7 +396,6 @@ alias la='ls -a'
 alias lla='ll -a'
 
 alias grep='grep --color'
-alias sc='s systemctl'
 
 alias -g T="| tail"
 alias -g G="| grep"
@@ -428,3 +406,5 @@ alias wget='nocorrect noglob wget'
 alias wgetc="wget --content-disposition"
 
 # }}}
+
+source $HOME/.zshrc.local
