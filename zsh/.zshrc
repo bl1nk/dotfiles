@@ -407,4 +407,4 @@ alias wgetc="wget --content-disposition"
 
 # }}}
 
-source $HOME/.zshrc.local
+source $HOME/.zshrc.$HOST.local
