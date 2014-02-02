@@ -39,10 +39,12 @@ bindkey "^I" expand-or-complete-with-dots
 
 # Have a bell-character put out, everytime a command finishes. This will set the urgent-hint,
 # if the terminal is configured accordingly
-bellchar=$'\a'
-setterm -blength 0 # Don't REALLY beep
-zle-line-init () { echo -n "$bellchar" }
-zle -N zle-line-init
+if [[ "`uname -s`" == "Linux" ]]; then
+	bellchar=$'\a'
+	setterm -blength 0 # Don't REALLY beep
+	zle-line-init () { echo -n "$bellchar" }
+	zle -N zle-line-init
+fi
 
 # "cd......" ;)
 _rationalise-dot() {
@@ -207,17 +209,6 @@ zstyle ':completion:*:wine:*' file-patterns '*.(exe|EXE):exe'
 # don't complete usernames (the come from localhost!)
 zstyle ':completion:*:(ssh|scp):*' users
 
-# complete ssh hostnames
-[[ -r ~/.ssh/known_hosts ]] && _ssh_hosts=(${${${${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}%%:*}#\[}%\]}) || _ssh_hosts=()
-[[ -r ~/.ssh/config ]] && _ssh_config_hosts=($(sed -rn 's/host\s+(.+)/\1/ip' "$HOME/.ssh/config" | grep -v "\*" )) || _ssh_config_hosts=()
-hosts=(
-$HOST
-"$_ssh_hosts[@]"
-$_ssh_config_hosts[@]
-localhost
-)
-zstyle ':completion:*:hosts' hosts $hosts
-
 # automagic url quoter
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
@@ -304,7 +295,9 @@ if [[ $TERM = "linux" ]]; then
 fi
 
 # some better colors for ls
-eval "`dircolors ~/.dircolors`"
+if [[ "`uname -s`" == "Linux" ]]; then
+	eval "`dircolors ~/.dircolors`"
+fi
 
 # colorful $PAGER
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -407,7 +400,7 @@ alias wgetc="wget --content-disposition"
 
 # }}}
 
-source $HOME/.zshrc.$HOST.local
+source $HOME/.zshrc.${HOST[(ws:.:)1]}.local
 stty echo
 
 # vim: set ft=zsh:
