@@ -171,7 +171,7 @@ workspace 7 output HDMI2
 workspace 8 output HDMI1
 workspace 9 output HDMI2
 workspace 0 output HDMI1
-for_window [class="(XFontSel|feh|Wine|Steam|hl_linux|net-minecraft-LauncherFrame|MPlayer)"] floating enable
+for_window [class="(XFontSel|feh|Wine|Steam|hl_linux|net-minecraft-LauncherFrame|MPlayer|mpv)"] floating enable
 for_window [title="Customize Look and Feel"] floating enable
 for_window [class="Corebird"] border none
 
