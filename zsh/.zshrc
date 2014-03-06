@@ -357,7 +357,7 @@ fi
 
 PROMPT="
 ${_main}%{$reset_color%} %{$fg_bold[green]%}%~\${vcs_info_msg_0_}
-%{$fg_bold[white]%}─╼%{$reset_color%} "
+%{$fg_no_bold[white]%}─╼%{$reset_color%} "
 
 # }}}
 # env {{{

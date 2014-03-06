@@ -12,30 +12,43 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'plasticboy/vim-markdown'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'ervandew/supertab'
 Bundle 'jiangmiao/auto-pairs'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'godlygeek/tabular'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tpope/vim-surround'
 Bundle 'rking/ag.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'PotatoesMaster/i3-vim-syntax'
+Bundle 'nanotech/jellybeans.vim'
+
+Bundle 'bling/vim-airline'
 
 " plugin settings {{{
 
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_working_path_mode = 1
-let g:ctrlp_dotfiles = 1
-let g:ctrlp_switch_buffer = 0
 let g:vim_markdown_folding_disabled = 1
 let g:jellybeans_background_color_256 = 'none'
 let g:SuperTabDefaultCompletionType = "context"
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
+if executable('ag')
+	" Use Ag over Grep
+	set grepprg=ag\ --nogroup\ --nocolor
+
+	" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_working_path_mode = 1
+let g:ctrlp_dotfiles = 1
+let g:ctrlp_switch_buffer = 0
+
+let g:airline_powerline_fonts = 0
+let g:airline_theme='powerlineish'
+" unicode symbols
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 " }}}
 " }}}
@@ -45,7 +58,7 @@ filetype plugin indent on
 syntax enable
 set ts=4 sts=4 sw=4 noexpandtab
 set showbreak=+\ 
-set laststatus=1
+set laststatus=2
 set fdm=marker
 set incsearch
 set ignorecase
@@ -68,7 +81,7 @@ colorscheme jellybeans
 set background=dark
 if has("gui_running")
 	set guioptions=aegimLt
-	set guifont=PragmataPro:h14
+	set guifont=PragmataPro:h16
 endif
 set t_Co=256
 
@@ -98,6 +111,7 @@ nnoremap <Space> za
 vnoremap <Space> za
 
 nmap ; :CtrlPBuffer<CR>
+nmap <leader>; :CtrlPCurWD<CR>
 
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
@@ -110,3 +124,4 @@ if has("autocmd")
 endif
 
 " }}}
+
