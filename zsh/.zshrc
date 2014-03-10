@@ -349,15 +349,8 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git svn
 
-if [ $USER = "markus" ]; then
-	_main="%{$fg_no_bold[yellow]%}%m"
-else
-	_main="%{$fg_no_bold[magenta]%}%n%{$reset_color%}@%{$fg_no_bold[yellow]%}%m"
-fi
-
-PROMPT="
-${_main}%{$reset_color%} %{$fg_bold[green]%}%~\${vcs_info_msg_0_}
-%{$fg_no_bold[white]%}─╼%{$reset_color%} "
+RPROMPT="\${vcs_info_msg_0_}"
+PROMPT="%{$fg_no_bold[yellow]%}%m%{$reset_color%} %{$fg_no_bold[red]%}%~%{$fg_bold[green]%} ⇢%{$reset_color%} "
 
 # }}}
 # env {{{

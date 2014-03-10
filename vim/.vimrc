@@ -31,18 +31,27 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-if executable('ag')
-	" Use Ag over Grep
-	set grepprg=ag\ --nogroup\ --nocolor
+let g:ctrlp_map = '<leader>f'
+let g:ctrlp_show_hidden = 1
+" this is ignored since we're using ag
+let g:ctrlp_custom_ignore = {
+			\ 'dir': '\v[\/]((\.(git|hg|svn))|build)$',
+			\ 'file': '\v\.(DS_Store)$',
+			\ }
+let g:ctrlp_working_path_mode = 'ra'
 
-	" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+if executable('ag')
+	set grepprg=ag\ -nogroup\ --nocolor
+	let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor --ignore-dir .git -g ""'
+	let g:ctrlp_use_caching = 0
 endif
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_working_path_mode = 1
-let g:ctrlp_dotfiles = 1
-let g:ctrlp_switch_buffer = 0
+
+let g:aghighlight = 1
+let g:ag_mapping_message = 0
+nnoremap <leader>a :Ag!<space>
+
+vmap <leader>t= :Tabularize /=<CR>
+vmap <leader>t: :Tabularize /:\zs/l0l1<CR>
 
 let g:airline_powerline_fonts = 0
 let g:airline_theme='powerlineish'
@@ -73,9 +82,14 @@ set title
 set visualbell
 set shell=sh
 set ofu=syntaxcomplete#Complete
+set nu
+set rnu
+
+set wildmenu
+set wildmode=list:longest
 
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:·
 
 colorscheme jellybeans
 set background=dark
@@ -96,8 +110,7 @@ nmap <leader>p :set paste!<CR>
 nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 nmap <leader>l :set list!<CR>
 
-nmap <leader>- :split<CR>
-nmap <leader><bar> :vsplit<CR>
+inoremap jj <ESC>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -113,8 +126,17 @@ vnoremap <Space> za
 nmap ; :CtrlPBuffer<CR>
 nmap <leader>; :CtrlPCurWD<CR>
 
+vnoremap > >gv
+vnoremap < <gv
+inoremap <C-l> <ESC>A
+noremap H ^
+noremap L $
+
+
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
+
+cmap w!! %!sudo tee > /dev/null %
 
 " }}}
 " Source the vimrc file after saving it {{{
