@@ -3,33 +3,35 @@
 
 set nocompatible 
 filetype off
-
-" vundle {{{
-
+" Vundle {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
 Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'ervandew/supertab'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-surround'
+" Bundles {{{
+" sort the bundles by plugin name with
+"   sort i /\/\zs.\+\ze'/ r
 Bundle 'rking/ag.vim'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'itchyny/lightline.vim'
-
-" plugin settings {{{
-
-let g:vim_markdown_folding_disabled = 1
+Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-fugitive'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-surround'
+" Bundle settings {{{
+" jellybeans {{{
 let g:jellybeans_background_color_256 = 'none'
+" }}}
+" supertab {{{
 let g:SuperTabDefaultCompletionType = "context"
+" }}}
+" emmet {{{
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
-
+" }}}
+" ctrlp {{{
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_show_hidden = 1
 " this is ignored since we're using ag
@@ -45,22 +47,26 @@ if executable('ag')
 	let g:ctrlp_use_caching = 0
 endif
 
+nmap ; :CtrlPBuffer<CR>
+nmap <leader>; :CtrlPCurWD<CR>
+" }}}
+" ag {{{
 let g:aghighlight = 1
 let g:ag_mapping_message = 0
 nnoremap <leader>a :Ag!<space>
-
+" }}}
+" tabularize {{{
 vmap <leader>t= :Tabularize /=<CR>
 vmap <leader>t: :Tabularize /:\zs/l0l1<CR>
-
 " }}}
 " }}}
-" general {{{
-
+" }}}
+" }}}
+" General settings {{{
 filetype plugin indent on
 syntax enable
 set ts=4 sts=4 sw=4 noexpandtab
-set showbreak=+\ 
-set laststatus=2
+set showbreak=↪
 set fdm=marker
 set incsearch
 set ignorecase
@@ -91,52 +97,54 @@ if has("gui_running")
 	set guifont=PragmataPro:h16
 endif
 set t_Co=256
-
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=AL
-
+" Statusline {{{
+set laststatus=2
+set statusline=
+set statusline+=%1*\ %<%f\ 
+set statusline+=%2*\ %m\ %3*%=
+set statusline+=%4*\ ←\ %2*\ \%c\ 
+hi User1 guibg=#0087af guifg=#ffffff ctermbg=31 ctermfg=255
+hi User2 guibg=#262626 guifg=#585858 ctermbg=235 ctermfg=240
+hi User3 guibg=#1c1c1c guifg=#585858 ctermbg=234 ctermfg=240
+hi User4 guibg=#262626 guifg=#875fd7 ctermbg=235 ctermfg=98
 " }}}
-" keybinds {{{
-
+" }}}
+" Maps {{{
 nmap <leader>n :setlocal nu!<CR>:setlocal rnu!<CR>
 nmap <leader>p :set paste!<CR>
 nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 nmap <leader>l :set list!<CR>
+nnoremap <ESC><ESC> :nohlsearch<CR>
+nnoremap j gj
+nnoremap k gk
 
+" exit insert mode with jj
 inoremap jj <ESC>
 
+" switch between window splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <ESC><ESC> :nohlsearch<CR>
 
-nnoremap j gj
-nnoremap k gk
+" toggle folds
 nnoremap <Space> za
 vnoremap <Space> za
 
-nmap ; :CtrlPBuffer<CR>
-nmap <leader>; :CtrlPCurWD<CR>
-
+" easy indentation
 vnoremap > >gv
 vnoremap < <gv
-inoremap <C-l> <ESC>A
+
+" start/end of lines
 noremap H ^
 noremap L $
+inoremap <C-l> <ESC>A
 
-
+" Markdown headings
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
 
+" fucking save it
 cmap w!! %!sudo tee > /dev/null %
-
-" }}}
-" Source the vimrc file after saving it {{{
-
-if has("autocmd")
-	autocmd bufwritepost .vimrc source $MYVIMRC
-endif
-
 " }}}
 
