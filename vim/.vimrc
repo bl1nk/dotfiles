@@ -20,8 +20,7 @@ Bundle 'rking/ag.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'nanotech/jellybeans.vim'
-
-Bundle 'bling/vim-airline'
+Bundle 'itchyny/lightline.vim'
 
 " plugin settings {{{
 
@@ -52,12 +51,6 @@ nnoremap <leader>a :Ag!<space>
 
 vmap <leader>t= :Tabularize /=<CR>
 vmap <leader>t: :Tabularize /:\zs/l0l1<CR>
-
-let g:airline_powerline_fonts = 0
-let g:airline_theme='powerlineish'
-" unicode symbols
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
 
 " }}}
 " }}}
