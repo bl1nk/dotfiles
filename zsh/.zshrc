@@ -268,7 +268,7 @@ zstyle ':completion:*:manuals.(^1*)' insert-sections   true
 
 # }}}
 # }}}
-# colors {{{
+# Colors {{{
 #use these in functions/shell scripts
 export NC='\e[0m'
 export white='\e[0;30m'
@@ -308,7 +308,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[00;32m'
 
 # }}}
-# functions {{{
+# Functions {{{
 
 swap() {
 	if [[ -z $1 ]] || [[ -z $2 ]] || [[ $1 = "-h" ]]; then
@@ -337,7 +337,7 @@ function f() {
 }
 
 # }}}
-# prompt {{{
+# Prompt {{{
 
 # load module
 autoload -Uz vcs_info
@@ -350,10 +350,10 @@ zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git svn
 
 RPROMPT="\${vcs_info_msg_0_}"
-PROMPT="%{$fg_no_bold[yellow]%}%m%{$reset_color%} %{$fg_no_bold[red]%}%~%{$fg_bold[green]%} ⇢%{$reset_color%} "
+PROMPT="%{$fg_no_bold[yellow]%}%m%{$reset_color%} %{$fg_no_bold[red]%}%~%{$fg_bold[green]%} →%{$reset_color%} "
 
 # }}}
-# env {{{
+# Env {{{
 
 PATH=$HOME/bin:$PATH
 
@@ -366,7 +366,7 @@ TIME_STYLE=long-iso
 export PATH VISUAL EDITOR PAGER LESSCHARSET TIME_STYLE
 
 # }}}
-# aliases {{{
+# Aliases {{{
 
 alias s='sudo '
 alias v='vim '
