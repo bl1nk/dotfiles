@@ -1,0 +1,26 @@
+[user]
+	email = m@kuchen.io
+	name = Markus Cisler
+[core]
+	editor = vim
+[alias]
+	br = branch
+	co = checkout
+	lg = log --all --graph --pretty=format:'%Cblue%h%C(yellow)%d %Cgreen(%cr) %Cred%an%+b'
+	rem = remote
+	st = status
+	up = "!git remote update -p; git merge --ff-only @{u}"
+[color]
+	ui = true
+	branch = auto
+	diff = auto
+	grep = auto
+[diff]
+	tool = vimdiff
+[push]
+	default = simple
+[grep]
+	extendRegexp = true
+	lineNumber = true
+[github]
+	user = bl1nk
