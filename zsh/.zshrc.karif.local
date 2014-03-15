@@ -1,5 +1,0 @@
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-export TERMINFO=$HOME/.local/share/terminfo
-alias t='tmux attach'
-alias cs16='./hlds_run -game cstrike -pingboost 3 +maxplayers 12'
-
