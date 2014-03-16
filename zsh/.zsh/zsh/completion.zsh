@@ -14,7 +14,6 @@ zstyle ':completion:*' use-perl on
 # completion colours
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-zstyle ':completion:*' completer _complete _match _approximate _7slash 
 zstyle ':completion:*:match:*' original only
 
 # allow more mistypes if longer command
