@@ -19,26 +19,7 @@ zstyle ':vcs_info:*' unstagedstr '#'
 zstyle ':vcs_info:*' formats $VCS_PROMPT
 zstyle ':vcs_info:*' actionformats $AVCS_PROMPT
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*+set-message:*' hooks git-aheadbehind git-untracked git-message
-
-### git: Show +N/-N when your local branch is ahead-of or behind remote HEAD.
-# Make sure you have added misc to your 'formats':  %m
-function +vi-git-aheadbehind() {
-  local ahead behind
-  local -a gitstatus
-
-  ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
-  (( $ahead )) && gitstatus+=( "${reset_color}+${ahead}%{$reset_color%}" )
-
-  behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
-  (( $behind )) && gitstatus+=( "${reset_color}-${behind}%{$reset_color%}" )
-
-  hook_com[misc]+=${(j::)gitstatus}
-
-  if [[ -n ${hook_com[misc]} ]]; then
-    hook_com[misc]="$AVCS_PRE${hook_com[misc]}$AVCS_SUF"
-  fi
-}
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-message
 
 ### git: Show marker (T) if there are untracked files in repository
 # Make sure you have added staged to your 'formats':  %c
