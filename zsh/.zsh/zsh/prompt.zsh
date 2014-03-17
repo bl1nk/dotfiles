@@ -19,10 +19,10 @@ function p_vcs {
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 function p_envs {
   local envs
-  [[ -n $SSH_CLIENT ]]  && envs+="☰"
+  [[ -n $SSH_CLIENT ]]  && envs+="×"
   [[ -n $VIRTUAL_ENV ]] && envs+="P"
 
-  [[ -n $envs ]] && echo " %F{blue}$envs%f"
+  [[ -n $envs ]] && echo " %F{red}$envs%f"
 }
 
 PROMPT='%f$(p_colored_path)$(p_vcs)$(p_envs) %F{green}→%f '
