@@ -11,6 +11,12 @@ setopt append_history
 setopt hist_ignore_dups
 setopt share_history
 setopt extendedglob
+HISTFILE=~/.zsh/histfile
+HISTSIZE=10000
+SAVEHIST=500000
+readonly HISTFILE
+export HISTFILE HISTSIZE SAVEHIST
+
 
 # env vars
 EDITOR=vim
