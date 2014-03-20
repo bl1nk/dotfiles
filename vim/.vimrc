@@ -8,6 +8,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+source ~/.vim/bundles.vim
+
 " everything in ~/.vim/plugin gets loaded automatically.
 " that's awesome.
 
