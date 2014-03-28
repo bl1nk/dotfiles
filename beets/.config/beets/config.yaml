@@ -1,12 +1,12 @@
-directory:      ~/music
+directory:      ~/Desktop/music
 library:        ~/.config/beets/library.blb
-plugins:        scrub zero web
+plugins:        scrub zero chroma discogs fromfilename
 original_date:  yes
-threaded:       no
+threaded:       yes
 paths:
-    default: $albumartist/($year) $album%aunique{}/$track - $title
-    singleton: Non-Album/$artist/$title
-    comp: Compilations/($year) $album%aunique{}/$track - $artist - $title
+    default: $albumartist/$album%aunique{}/$track - $title
+    singleton: Singletons/$artist/$title
+    comp: Compilations/$album%aunique{}/$track - $artist - $title
 import:
     move:     yes
 zero:
