@@ -1,6 +1,6 @@
 directory:      ~/Desktop/music
 library:        ~/.config/beets/library.blb
-plugins:        scrub zero chroma discogs fromfilename
+plugins:        scrub zero chroma discogs fromfilename fetchart embedart
 original_date:  yes
 threaded:       yes
 paths:
