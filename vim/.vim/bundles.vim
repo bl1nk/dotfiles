@@ -8,7 +8,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-fugitive'
-Bundle 'plasticboy/vim-markdown'
+Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-surround'
 
 " Bundle settings {{{
