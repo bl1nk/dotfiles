@@ -1,3 +1,5 @@
+alias ..="cd .."
+
 alias sudo='sudo '
 alias s='sudo '
 alias v='vim '
@@ -21,3 +23,4 @@ alias -g H="| head"
 alias mkdir='nocorrect mkdir'
 alias wget='nocorrect noglob wget'
 alias wgetc="wget --content-disposition"
+
