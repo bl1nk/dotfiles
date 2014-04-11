@@ -1,0 +1,26 @@
+# $HOME/.duti
+# bl1nk - http://kuchen.io
+
+cx.c3.theunarchiver .7z all
+cx.c3.theunarchiver .cab all
+cx.c3.theunarchiver .gtar all
+cx.c3.theunarchiver .gz all
+cx.c3.theunarchiver .hqx all
+cx.c3.theunarchiver .jar all
+cx.c3.theunarchiver .msi all
+cx.c3.theunarchiver .rar all
+cx.c3.theunarchiver .sit all
+cx.c3.theunarchiver .sit all
+cx.c3.theunarchiver .tar all
+cx.c3.theunarchiver .tar.gz all
+cx.c3.theunarchiver .tgz all
+cx.c3.theunarchiver .zip all
+
+io.mpv .avi all
+io.mpv .flv all
+io.mpv .mkv all
+io.mpv .mp4 all
+io.mpv .mov all
+io.mpv .webm all
+io.mpv .wmv all
+
