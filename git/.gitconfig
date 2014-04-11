@@ -6,7 +6,7 @@
 [alias]
 	br = branch
 	co = checkout
-	lg = log --all --graph --pretty=format:'%Cblue%h%C(yellow)%d %Cgreen(%cr) %Cred%an%+b'
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	rem = remote
 	st = status
 	up = "!git remote update -p; git merge --ff-only @{u}"
