@@ -3,8 +3,6 @@ nmap <leader>p :set paste!<CR>
 nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 nmap <leader>l :set list!<CR>
 nnoremap <ESC><ESC> :nohlsearch<CR>
-nnoremap j gj
-nnoremap k gk
 
 " exit insert mode with jj
 inoremap jj <ESC>
