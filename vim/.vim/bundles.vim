@@ -26,7 +26,6 @@ autocmd FileType html,css EmmetInstall
 " }}}
 "
 " ctrlp {{{
-let g:ctrlp_map = '<leader>f'
 let g:ctrlp_show_hidden = 1
 " this is ignored since we're using ag
 let g:ctrlp_custom_ignore = {
@@ -41,8 +40,8 @@ if executable('ag')
 	let g:ctrlp_use_caching = 0
 endif
 
-nmap ; :CtrlPBuffer<CR>
-nmap <leader>; :CtrlPCurWD<CR>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>f :CtrlPCurWD<CR>
 " }}}
 "
 " ag {{{
