@@ -40,4 +40,19 @@ precmd() {
 		printf "\33]2;$USER@$HOST: ${PWD/#$HOME/~}\007" $1
 	fi
 }
+
+_rationalise-dot() {
+	if [[ $LBUFFER = "cd "* ]]; then
+		if [[ $LBUFFER = *.. ]]; then
+			LBUFFER+=/..
+		else
+			LBUFFER+=.
+		fi
+	else
+		LBUFFER+=.
+	fi
+}
+zle -N _rationalise-dot
+bindkey . _rationalise-dot
+
 # }}}

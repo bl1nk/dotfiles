@@ -1,5 +1,3 @@
-alias ..="cd .."
-
 alias sudo='sudo '
 alias s='sudo '
 alias v='vim '
