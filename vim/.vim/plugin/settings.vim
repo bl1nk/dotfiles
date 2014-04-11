@@ -34,3 +34,6 @@ if has("gui_running")
 endif
 set t_Co=256
 
+" fix crontab editing
+set backupskip=/tmp/*,/private/tmp/*
+
