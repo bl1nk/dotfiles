@@ -4,17 +4,20 @@
 [core]
 	editor = vim
 [alias]
+	a = add
 	br = branch
+	cm = commit
 	co = checkout
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --all --graph --decorate --oneline --abbrev-commit
+	p = push
 	rem = remote
-	st = status
+	st = status -sb
 	up = "!git remote update -p; git merge --ff-only @{u}"
 [color]
-	ui = true
 	branch = auto
 	diff = auto
 	grep = auto
+	ui = true
 [diff]
 	tool = vimdiff
 [push]
