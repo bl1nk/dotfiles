@@ -1,15 +1,16 @@
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 if [[ "$OSTYPE" == darwin* ]]; then
-	export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
-	export ANDROID_HOME=/usr/local/opt/android-sdk
+	PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+	ANDROID_HOME=/usr/local/opt/android-sdk
 
-	# ruby gems
-	#export GEM_HOME='/usr/local'
-	#export PATH=$PATH:/usr/local/opt/ruby/bin
 	PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-	# perl cpan
 	. $HOME/perl5/perlbrew/etc/bashrc
+	PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
+	GOPATH=$HOME/go
+	PATH=$PATH:$GOPATH/bin
+
+	export PATH ANDROID_HOME GOPATH
 
 	alias ls="ls -Gh"
 	alias lt="ll -tcr"
