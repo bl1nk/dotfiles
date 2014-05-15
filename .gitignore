@@ -20,3 +20,4 @@ ncmpcpp/.ncmpcpp/error.log
 zsh/.zsh/histfile
 vim/.vim/bundle/*
 !vim/.vim/bundle/vundle
+zsh/.zsh/cache
