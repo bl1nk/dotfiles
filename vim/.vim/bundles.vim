@@ -4,16 +4,17 @@ Bundle 'rking/ag.vim'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-fugitive'
+Bundle 'w0ng/vim-hybrid'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-surround'
 
 " Bundle settings {{{
-" jellybeans {{{
-let g:jellybeans_background_color_256 = 'none'
+" hybrid {{{
+	let g:hybrid_use_iTerm_colors = 1
+	colorscheme hybrid
 " }}}
 "
 " supertab {{{
