@@ -26,7 +26,6 @@ set showbreak=↪
 set nu
 set rnu
 
-colorscheme jellybeans
 set background=dark
 if has("gui_running")
 	set guioptions=aegimLt
