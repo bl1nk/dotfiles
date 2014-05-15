@@ -24,6 +24,10 @@ function f() {
 	find . -iname $q
 }
 
+function md2pdf() {
+	pandoc -s $1 -o $1.pdf --smart
+}
+
 # zsh functions {{{
 # When tab-completing, show dots. For fast tab completes, they will be
 # overwritten instantly, for long tab-completions, you have feedback.

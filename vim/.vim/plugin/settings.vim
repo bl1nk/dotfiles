@@ -18,7 +18,7 @@ set shell=sh
 set ofu=syntaxcomplete#Complete
 
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:full
 
 set list
 set listchars=tab:▸\ ,eol:¬,trail:·

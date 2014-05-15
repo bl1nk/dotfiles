@@ -30,6 +30,8 @@ inoremap <C-l> <ESC>A
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
 
+nnoremap <leader>P :!pandoc -s % -o %.pdf --smart<CR>
+
 " fucking save it
 cmap w!! %!sudo tee > /dev/null %
 
