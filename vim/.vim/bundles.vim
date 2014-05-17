@@ -13,7 +13,7 @@ Bundle 'tpope/vim-surround'
 
 " Bundle settings {{{
 " hybrid {{{
-	let g:hybrid_use_iTerm_colors = 1
+	let g:hybrid_use_Xresources = 1
 	colorscheme hybrid
 " }}}
 "
