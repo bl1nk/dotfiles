@@ -16,6 +16,7 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'tpope/vim-surround'
 
 call vundle#end()
+filetype plugin indent on
 
 " Bundle settings {{{
 " hybrid {{{
