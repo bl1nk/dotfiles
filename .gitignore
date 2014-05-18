@@ -19,5 +19,5 @@ beets/.config/beets/library.blb
 ncmpcpp/.ncmpcpp/error.log
 zsh/.zsh/histfile
 vim/.vim/bundle/*
-!vim/.vim/bundle/vundle
 zsh/.zsh/cache
+!vim/.vim/bundle/Vundle.git

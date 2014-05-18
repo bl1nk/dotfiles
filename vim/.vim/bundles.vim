@@ -1,15 +1,21 @@
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
 " sort the bundles by plugin name with
 "   sort i /\/\zs.\+\ze'/ r
-Bundle 'rking/ag.vim'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-fugitive'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'vim-pandoc/vim-pandoc'
-Bundle 'tpope/vim-surround'
+Plugin 'rking/ag.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-fugitive'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'tpope/vim-surround'
+
+call vundle#end()
 
 " Bundle settings {{{
 " hybrid {{{
