@@ -14,6 +14,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 
 call vundle#end()
