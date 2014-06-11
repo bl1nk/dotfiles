@@ -1,4 +1,4 @@
-autoload -U compinit promptinit colors select-word-style url-quote-magic
+autoload -U compinit promptinit colors select-word-style url-quote-magic zmv
 zle -N self-insert url-quote-magic
 select-word-style bash
 compinit -i
