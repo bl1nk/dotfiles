@@ -20,7 +20,7 @@ set wildmenu
 set wildmode=list:full
 
 set list
-set listchars=tab:▸\ ,eol:¬,trail:·
+set listchars=tab:▸\ ,eol:¬,trail:␣
 set showbreak=↪
 set nu
 set rnu
@@ -28,7 +28,8 @@ set rnu
 set background=dark
 if has("gui_running")
 	set guioptions=aegimLt
-	set guifont=Source\ Code\ Pro:h14
+	set guifont=PragmataPro:h16
+	colo hybrid-light
 endif
 set t_Co=256
 
