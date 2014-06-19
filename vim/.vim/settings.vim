@@ -54,10 +54,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" switch between buffers
-nnoremap <S-Left> :bprevious<CR>
-nnoremap <S-Right> :bnext<CR>
-
 " toggle folds
 nnoremap <Space> za
 vnoremap <Space> za
