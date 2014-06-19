@@ -4,7 +4,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " sort the bundles by plugin name with
 "   sort i /\/\zs.\+\ze'/ r
-Plugin 'rking/ag.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/emmet-vim'
 Plugin 'Shougo/neocomplete'
@@ -113,12 +112,6 @@ endif
 " emmet {{{
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
-" }}}
-
-" ag {{{
-let g:aghighlight = 1
-let g:ag_mapping_message = 0
-nnoremap <leader>a :Ag!<space>
 " }}}
 
 " tabularize {{{
