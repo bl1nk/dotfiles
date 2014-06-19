@@ -5,7 +5,5 @@ set nocompatible
 filetype off
 
 source ~/.vim/bundles.vim
-
-" everything in ~/.vim/plugin gets loaded automatically.
-" that's awesome.
+source ~/.vim/settings.vim
 
