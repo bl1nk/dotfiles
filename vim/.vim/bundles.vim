@@ -12,12 +12,13 @@ Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'klen/python-mode'
 Plugin 'godlygeek/tabular'
+Plugin 'Shougo/unite.vim'
 Plugin 'bling/vim-airline'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
-Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -28,9 +29,32 @@ colorscheme hybrid
 " }}}
 
 " unite.vim {{{
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-let g:unite_source_history_yank_enable = 1
 let g:unite_force_overwrite_statusline = 0
+let g:unite_source_history_yank_enable = 1
+let g:unite_enable_start_insert = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+" use ag instead of grep
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--line-numbers --nocolor ' .
+			\ '--nogroup --hidden --ignore ''.hg'' --ignore ''.svn'' ' .
+			\ '--ignore ''.git'' --ignore ''.bzr'''
+let g:unite_source_grep_recursive_opt = ''
+
+nnoremap <C-p> :Unite -start-insert -no-split file_rec/async<cr>
+nnoremap <C-b> :Unite -quick-match buffer<cr>
+nnoremap <C-g> :Unite -no-split grep:.<cr>
+
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+	" Enable navigation with control-j and control-k in insert mode
+	imap <buffer> <C-j> <Plug>(unite_select_next_line)
+	imap <buffer> <C-k> <Plug>(unite_select_previous_line)
+	imap <buffer> <C-c> <Plug>(unite_exit)
+	nmap <buffer> <C-c> <Plug>(unite_exit)
+	nmap <buffer> <Esc> <Plug>(unite_exit)
+endfunction
 " }}}
 
 " neocomplete {{{
@@ -44,9 +68,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+	return neocomplete#close_popup() . "\<CR>"
+	" For no inserting <CR> key.
+	"return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -61,7 +85,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+	let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
 " }}}
@@ -104,8 +128,8 @@ vmap <leader>t: :Tabularize /:\zs/l0l1<CR>
 
 " vim-airline {{{
 let g:airline_powerline_fonts = 0
-let g:airline_left_sep = ' '
-let g:airline_right_sep = ' '
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 "let g:airline_symbols.linenr = '¶'
 "let g:airline_symbols.branch = '⎇'
 "let g:airline_symbols.paste = 'ρ'
