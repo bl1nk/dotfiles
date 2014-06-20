@@ -10,5 +10,5 @@ if [[ "$OSTYPE" == darwin* ]]; then
 
 	alias ls="ls -Gh"
 	alias lt="ll -tcr"
-	alias sshtunnel="sshuttle --dns -vvr markus@kuchen 0/0"
+	alias ql="qlmanage -p"
 fi
