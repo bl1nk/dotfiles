@@ -9,7 +9,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
-Plugin 'klen/python-mode'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'Shougo/unite.vim'
 Plugin 'bling/vim-airline'
@@ -22,7 +22,7 @@ Plugin 'Shougo/vimproc.vim'
 call vundle#end()
 filetype plugin indent on
 
-" hybrid {{{
+" vim-hybrid {{{
 let g:hybrid_use_Xresources = 1
 colorscheme hybrid
 " }}}
@@ -40,8 +40,8 @@ let g:unite_source_grep_default_opts = '--line-numbers --nocolor ' .
 			\ '--ignore ''.git'' --ignore ''.bzr'''
 let g:unite_source_grep_recursive_opt = ''
 
-nnoremap <C-p> :Unite -start-insert -no-split file_rec/async<cr>
-nnoremap <C-b> :Unite -quick-match buffer<cr>
+nnoremap <C-p> :Unite -start-insert -no-split -buffer-name=open file_rec/async<cr>
+nnoremap <C-b> :Unite -quick-match -buffer-name=buffer buffer<cr>
 nnoremap <C-g> :Unite -no-split grep:.<cr>
 
 " Custom mappings for the unite buffer
@@ -86,7 +86,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
 	let g:neocomplete#sources#omni#input_patterns = {}
 endif
-
 " }}}
 
 " neosnippet {{{
@@ -109,12 +108,12 @@ if has('conceal')
 endif
 " }}}
 
-" emmet {{{
+" emmet-vim {{{
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 " }}}
 
-" tabularize {{{
+" tabular {{{
 vmap <leader>t= :Tabularize /=<CR>
 vmap <leader>t: :Tabularize /:\zs/l0l1<CR>
 " }}}
@@ -123,11 +122,36 @@ vmap <leader>t: :Tabularize /:\zs/l0l1<CR>
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
 "let g:airline_symbols.linenr = '¶'
 "let g:airline_symbols.branch = '⎇'
 "let g:airline_symbols.paste = 'ρ'
 "let g:airline_symbols.whitespace = 'Ξ'
+
 let g:airline_theme = 'powerlineish'
+
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
+let g:airline_mode_map = {
+			\ '__' : '-',
+			\ 'n'  : 'N',
+			\ 'i'  : 'I',
+			\ 'R'  : 'R',
+			\ 'c'  : 'C',
+			\ 'v'  : 'V',
+			\ 'V'  : 'V',
+			\ '' : 'V',
+			\ 's'  : 'S',
+			\ 'S'  : 'S',
+			\ '' : 'S',
+			\ }
+let g:airline_section_x = ""
+let g:airline_section_y = ""
+" }}}
+
+" rainbow_parentheses.vim {{{
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 " }}}

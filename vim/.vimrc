@@ -1,7 +1,7 @@
 " $HOME/.vimrc
 " bl1nk - http://kuchen.io
 
-set nocompatible 
+set nocompatible
 filetype off
 
 source ~/.vim/bundles.vim

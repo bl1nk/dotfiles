@@ -30,7 +30,6 @@ set background=dark
 if has("gui_running")
 	set guioptions=aegimLt
 	set guifont=PragmataPro:h16
-	colo hybrid-light
 endif
 set t_Co=256
 
