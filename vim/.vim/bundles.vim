@@ -41,7 +41,7 @@ let g:unite_source_grep_default_opts = '--line-numbers --nocolor ' .
 let g:unite_source_grep_recursive_opt = ''
 
 nnoremap <C-p> :Unite -start-insert -no-split -buffer-name=open file_rec/async<cr>
-nnoremap <C-b> :Unite -quick-match -buffer-name=buffer buffer<cr>
+nnoremap <C-b> :Unite -start-insert -buffer-name=buffer buffer<cr>
 nnoremap <C-g> :Unite -no-split grep:.<cr>
 
 " Custom mappings for the unite buffer
