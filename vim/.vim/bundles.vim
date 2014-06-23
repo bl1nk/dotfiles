@@ -18,13 +18,19 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'reedes/vim-colors-pencil'
 
 call vundle#end()
 filetype plugin indent on
 
 " vim-hybrid {{{
 let g:hybrid_use_Xresources = 1
-colorscheme hybrid
+"colorscheme hybrid
+" }}}
+
+" vim-colors-pencil {{{
+colorscheme pencil
+set background=light
 " }}}
 
 " unite.vim {{{
@@ -128,7 +134,7 @@ let g:airline_right_sep = ''
 "let g:airline_symbols.paste = 'ρ'
 "let g:airline_symbols.whitespace = 'Ξ'
 
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'monochrome'
 
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1

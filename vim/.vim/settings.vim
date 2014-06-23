@@ -26,7 +26,6 @@ set showbreak=↪
 set nu
 set rnu
 
-set background=dark
 if has("gui_running")
 	set guioptions=aegimLt
 	set guifont=PragmataPro:h16
