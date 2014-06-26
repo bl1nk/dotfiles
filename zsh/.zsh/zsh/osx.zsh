@@ -10,5 +10,5 @@ if [[ "$OSTYPE" == darwin* ]]; then
 
 	alias ls="ls -Gh"
 	alias lt="ll -tcr"
-	alias q="qlmanage -p"
+	alias q='qlmanage -p $@ >/dev/null 2>&1'
 fi

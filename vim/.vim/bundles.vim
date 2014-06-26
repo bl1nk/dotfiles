@@ -32,13 +32,13 @@ set background=dark
 let g:unite_force_overwrite_statusline = 0
 let g:unite_source_history_yank_enable = 1
 let g:unite_enable_start_insert = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
+"call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " use ag instead of grep
 let g:unite_source_grep_command = 'ag'
 let g:unite_source_grep_default_opts = '--line-numbers --nocolor ' .
 			\ '--nogroup --hidden --ignore ''.hg'' --ignore ''.svn'' ' .
-			\ '--ignore ''.git'' --ignore ''.bzr'''
+			\ '--ignore ''.git'' --ignore ''.bzr'' --ignore ''node_modules'' '
 let g:unite_source_grep_recursive_opt = ''
 
 nnoremap <C-p> :Unite -start-insert -no-split -buffer-name=open file_rec/async<cr>
