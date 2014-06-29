@@ -8,6 +8,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
 	export PATH=$PATH:$GOPATH/bin
 	. $HOME/perl5/perlbrew/etc/bashrc
 
+	export LC_ALL="en_US.UTF-8"
+
 	alias ls="ls -Gh"
 	alias lt="ll -tcr"
 	alias q='qlmanage -p $@ >/dev/null 2>&1'
