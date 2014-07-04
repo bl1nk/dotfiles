@@ -25,6 +25,7 @@ set listchars=tab:▸\ ,eol:¬,trail:␣
 set showbreak=↪
 set nu
 set rnu
+set colorcolumn=80
 
 if has("gui_running")
 	set guioptions=aegimLt
