@@ -13,6 +13,8 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'Shougo/unite.vim'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'honza/vim-snippets'
@@ -129,7 +131,7 @@ let g:airline_right_sep = ''
 "let g:airline_symbols.paste = 'ρ'
 "let g:airline_symbols.whitespace = 'Ξ'
 
-let g:airline_theme = 'monochrome'
+let g:airline_theme = 'powerlineish'
 
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
@@ -146,8 +148,6 @@ let g:airline_mode_map = {
 			\ 'S'  : 'S',
 			\ '' : 'S',
 			\ }
-let g:airline_section_x = ""
-let g:airline_section_y = ""
 " }}}
 
 " rainbow_parentheses.vim {{{
