@@ -33,7 +33,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[00;32m'
 
 # configuration files
-for file in ~/.zsh/zsh/*.zsh; do
+for file in ~/.zsh/*.zsh; do
   source $file
 done
 
