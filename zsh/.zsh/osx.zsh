@@ -10,7 +10,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
 
 	export LC_ALL="en_US.UTF-8"
 
-	alias ls="ls -Gh"
-	alias lt="ll -tcr"
+	alias ls="ls -Gsh"
+	alias lt="ls -tcr"
+	alias llt="l -tcr"
 	alias q='qlmanage -p $@ >/dev/null 2>&1'
 fi
