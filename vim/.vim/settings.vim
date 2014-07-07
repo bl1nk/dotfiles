@@ -1,6 +1,6 @@
 syntax enable
 
-set ts=4 sts=4 sw=4 noexpandtab
+set ts=4 sts=4 sw=4 expandtab
 set fdm=marker
 set incsearch
 set ignorecase
