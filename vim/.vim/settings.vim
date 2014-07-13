@@ -61,6 +61,10 @@ vnoremap <Space> za
 vnoremap > >gv
 vnoremap < <gv
 
+" Keep search matches in the middle of the window
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " start/end of lines
 noremap H ^
 noremap L $
@@ -75,5 +79,21 @@ nnoremap <leader>P :!pandoc -s % -o %.pdf --smart<CR>
 
 " fucking save it
 cmap w!! %!sudo tee > /dev/null %
+
+" :)
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+" close help windows with q
+augroup ft_help
+    au!
+    au FileType help nnoremap q :close<cr>
+augroup END
+
+" Toggle 'keep current line centered' mode
+nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
+
 
 " }}}
