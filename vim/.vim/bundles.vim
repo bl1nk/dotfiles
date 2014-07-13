@@ -5,13 +5,14 @@ Plugin 'gmarik/Vundle.vim'
 " sort the bundles by plugin name with
 "   sort i /\/\zs.\+\ze'/ r
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'Valloric/MatchTagAlways'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'Shougo/unite.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -19,7 +20,6 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
-Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -30,33 +30,15 @@ colorscheme hybrid
 set background=dark
 " }}}
 
-" unite.vim {{{
-let g:unite_force_overwrite_statusline = 0
-let g:unite_source_history_yank_enable = 1
-let g:unite_enable_start_insert = 1
-"call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" ctrlp.vim {{{
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_show_hidden = 1
+"let g:ctrlp_custom_ignore = '\.(git|hg|svn)$'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:100'
 
-" use ag instead of grep
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts = '--line-numbers --nocolor ' .
-			\ '--nogroup --hidden --ignore ''.hg'' --ignore ''.svn'' ' .
-			\ '--ignore ''.git'' --ignore ''.bzr'' --ignore ''node_modules'' '
-let g:unite_source_grep_recursive_opt = ''
-
-nnoremap <C-p> :Unite -start-insert -no-split -buffer-name=open file_rec/async<cr>
-nnoremap <C-b> :Unite -start-insert -buffer-name=buffer buffer<cr>
-nnoremap <C-g> :Unite -no-split grep:.<cr>
-
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-	" Enable navigation with control-j and control-k in insert mode
-	imap <buffer> <C-j> <Plug>(unite_select_next_line)
-	imap <buffer> <C-k> <Plug>(unite_select_previous_line)
-	imap <buffer> <C-c> <Plug>(unite_exit)
-	nmap <buffer> <C-c> <Plug>(unite_exit)
-	nmap <buffer> <Esc> <Plug>(unite_exit)
-endfunction
+nmap <c-b> :CtrlPBuffer<cr>
 " }}}
 
 " neocomplete {{{
