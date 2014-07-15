@@ -104,15 +104,7 @@ vmap <leader>t: :Tabularize /:\zs/l0l1<CR>
 " }}}
 
 " vim-airline {{{
-let g:airline_powerline_fonts = 0
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.whitespace = 'Ξ'
-
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
 
 let g:airline#extensions#virtualenv#enabled = 1
