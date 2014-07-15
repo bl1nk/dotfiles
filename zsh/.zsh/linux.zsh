@@ -5,6 +5,11 @@ if [[ -x `which systemctl` ]]; then
 	alias sc='s systemctl '
 fi
 
+if [[ "$(hostname)" == "schoko.kuchen.io"  ]]; then
+    export PATH=$PATH:~/.rbenv/bin
+    eval "$(rbenv init -)"
+fi
+
 # colors in framebuffer
 if [[ $TERM = "linux" ]]; then
 	${HOME}/bin/parse_xdefaults.sh
@@ -21,3 +26,4 @@ if [[ "`uname -s`" == "Linux" ]]; then
 	zle-line-init () { echo -n "$bellchar" }
 	zle -N zle-line-init
 fi
+
