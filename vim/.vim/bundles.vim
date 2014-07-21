@@ -4,8 +4,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " sort the bundles by plugin name with
 "   sort i /\/\zs.\+\ze'/ r
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'Shougo/neocomplete'
