@@ -21,3 +21,4 @@ zsh/.zsh/histfile
 vim/.vim/bundle/*
 zsh/.zsh/cache
 !vim/.vim/bundle/Vundle.git
+mpv/.mpv/watch_later/
