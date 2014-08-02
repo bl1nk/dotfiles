@@ -19,7 +19,7 @@ zstyle ':completion:*:match:*' original only
 
 # allow more mistypes if longer command
 zstyle -e ':completion:*:approximate:*' \
-	max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+    max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
 
 # ignore completion for commands we don't have
 zstyle ':completion:*:functions' ignored-patterns '_*'
@@ -68,14 +68,14 @@ zstyle ':completion:*:descriptions' format "- %{${fg[yellow]}%}%d%{${reset_color
 zstyle ':completion:*:messages'     format "- %{${fg[cyan]}%}%d%{${reset_color}%} -"
 zstyle ':completion:*:corrections'  format "- %{${fg[yellow]}%}%d%{${reset_color}%} - (%{${fg[cyan]}%}errors %e%{${reset_color}%})"
 zstyle ':completion:*:default'      \
-	select-prompt \
-	"%{${fg[yellow]}%}Match %{${fg_bold[cyan]}%}%m%{${fg_no_bold[yellow]}%}  Line %{${fg_bold[cyan]}%}%l%{${fg_no_bold[red]}%}  %p%{${reset_color}%}"
+    select-prompt \
+    "%{${fg[yellow]}%}Match %{${fg_bold[cyan]}%}%m%{${fg_no_bold[yellow]}%}  Line %{${fg_bold[cyan]}%}%l%{${fg_no_bold[red]}%}  %p%{${reset_color}%}"
 zstyle ':completion:*:default'      \
-	list-prompt   \
-	"%{${fg[yellow]}%}Line %{${fg_bold[cyan]}%}%l%{${fg_no_bold[yellow]}%}  Continue?%{${reset_color}%}"
+    list-prompt   \
+    "%{${fg[yellow]}%}Line %{${fg_bold[cyan]}%}%l%{${fg_no_bold[yellow]}%}  Continue?%{${reset_color}%}"
 zstyle ':completion:*:warnings'     \
-	format        \
-	"- %{${fg_no_bold[red]}%}no match%{${reset_color}%} - %{${fg_no_bold[yellow]}%}%d%{${reset_color}%}"
+    format        \
+    "- %{${fg_no_bold[red]}%}no match%{${reset_color}%} - %{${fg_no_bold[yellow]}%}%d%{${reset_color}%}"
 zstyle ':completion:*' group-name ''
 
 # manual pages are sorted into sections
@@ -84,23 +84,23 @@ zstyle ':completion:*:manuals'       separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections   true
 
 ### highlight the original input.
-    zstyle ':completion:*:original' \
-        list-colors "=*=$color[red];$color[bold]"
+zstyle ':completion:*:original' \
+    list-colors "=*=$color[red];$color[bold]"
 
 ### highlight words like 'esac' or 'end'
-    zstyle ':completion:*:reserved-words' \
-        list-colors "=*=$color[red]"
+zstyle ':completion:*:reserved-words' \
+    list-colors "=*=$color[red]"
 
 ### colorize hostname completion
-    zstyle ':completion:*:*:*:*:hosts' \
-        list-colors "=*=$color[cyan];$color[bg-black]"
+zstyle ':completion:*:*:*:*:hosts' \
+    list-colors "=*=$color[cyan];$color[bg-black]"
 
 ### colorize username completion
-    zstyle ':completion:*:*:*:*:users' \
-        list-colors "=*=$color[red];$color[bg-black]"
+zstyle ':completion:*:*:*:*:users' \
+    list-colors "=*=$color[red];$color[bg-black]"
 
 ### colorize processlist for 'kill'
-    zstyle ':completion:*:*:kill:*:processes' \
-        list-colors "=(#b) #([0-9]#) #([^ ]#)*=$color[none]=$color[yellow]=$color[green]"
+zstyle ':completion:*:*:kill:*:processes' \
+    list-colors "=(#b) #([0-9]#) #([^ ]#)*=$color[none]=$color[yellow]=$color[green]"
 
 

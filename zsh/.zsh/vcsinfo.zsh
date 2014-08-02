@@ -31,9 +31,9 @@ function +vi-git-untracked(){
         # files in $PWD, use:
         #[[ -n $(git ls-files --others --exclude-standard) ]] ; then
         if [[ -n ${hook_com[unstaged]} ]]; then
-          hook_com[unstaged]="·$DELIM${hook_com[unstaged]}"
+            hook_com[unstaged]="·$DELIM${hook_com[unstaged]}"
         else
-          hook_com[unstaged]="·"
+            hook_com[unstaged]="·"
         fi
     fi
 }
