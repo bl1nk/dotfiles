@@ -25,4 +25,4 @@ function p_envs {
     [[ -n $envs ]] && echo " %F{red}$envs%f"
 }
 
-PROMPT='%f$(p_colored_path)$(p_vcs)$(p_envs) %F{green}→%f '
+PROMPT='%f$(p_colored_path)$(p_vcs)$(p_envs) %F{green}λ%f '
