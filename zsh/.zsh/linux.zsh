@@ -6,8 +6,8 @@ if [[ -x `which systemctl` ]]; then
 fi
 
 if [[ "$(hostname)" == "schoko.kuchen.io"  ]]; then
-    export PATH=$PATH:~/.rbenv/bin
-    eval "$(rbenv init -)"
+#     export PATH=$PATH:~/.rbenv/bin
+#     eval "$(rbenv init -)"
 fi
 
 # colors in framebuffer
