@@ -4,7 +4,6 @@
 " bundles {{{
 call plug#begin()
 Plug 'bling/vim-airline'
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-sensible'
