@@ -4,7 +4,6 @@
 " bundles {{{
 call plug#begin()
 Plug 'bling/vim-airline'
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-sensible'
@@ -38,6 +37,7 @@ set wrap            " softwrap lines
 if v:version > 704 || v:version == 704 && has("patch338")
     set breakindent " wraps paragraphs like sublime text
 endif
+set expandtab ts=4 sw=4 ai
 " }}}
 " maps {{{
 nmap <leader>n   :setlocal nu!<CR>:setlocal rnu!<CR>
@@ -78,7 +78,6 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:100'
 nmap <c-b> :CtrlPBuffer<cr>
-
 
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'powerlineish'
