@@ -1,29 +1,25 @@
-if [[ -x `which pacman` ]]; then
-    alias p='s pacman '
-fi
-if [[ -x `which systemctl` ]]; then
-    alias sc='s systemctl '
-fi
+if [[ "$OSTYPE" == linux* ]]; then
+	# some better colors for ls
+	eval "`dircolors ~/.dircolors`"
 
-if [[ "$(hostname)" == "schoko.kuchen.io"  ]]; then
-#     export PATH=$PATH:~/.rbenv/bin
-#     eval "$(rbenv init -)"
-fi
+	# beep after commands
+	bellchar=$'\a'
+	setterm -blength 0 # Don't REALLY beep
+	zle-line-init () { echo -n "$bellchar" }
+	zle -N zle-line-init
 
-# colors in framebuffer
-if [[ $TERM = "linux" ]]; then
-    ${HOME}/bin/parse_xdefaults.sh
-    clear #for background artifacting
-fi
+	if [[ -x `which pacman` ]]; then
+		alias p='s pacman '
+	fi
+	if [[ -x `which systemctl` ]]; then
+		alias sc='s systemctl '
+	fi
 
-if [[ "`uname -s`" == "Linux" ]]; then
-    # some better colors for ls
-    eval "`dircolors ~/.dircolors`"
+	# colors in framebuffer
+	if [[ $TERM = "linux" ]]; then
+		${HOME}/bin/parse_xdefaults.sh
+		clear #for background artifacting
+	fi
 
-    # beep after commands
-    bellchar=$'\a'
-    setterm -blength 0 # Don't REALLY beep
-    zle-line-init () { echo -n "$bellchar" }
-    zle -N zle-line-init
 fi
 
