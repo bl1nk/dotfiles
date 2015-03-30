@@ -29,16 +29,6 @@ function md2pdf() {
 }
 
 # zsh functions {{{
-# When tab-completing, show dots. For fast tab completes, they will be
-# overwritten instantly, for long tab-completions, you have feedback.
-expand-or-complete-with-dots() {
-    echo -n -e "${RED}...\e[0m\033[3D"
-    zle expand-or-complete
-    zle redisplay
-}
-zle -N expand-or-complete-with-dots
-bindkey "^I" expand-or-complete-with-dots
-
 precmd() {
     if [[ "$TERM" == xterm* ]] || [[ $TERM == rxvt* ]] || [[ $TERM == ansi ]] || [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
         printf "\33]2;$USER@$HOST: ${PWD/#$HOME/~}\007" $1

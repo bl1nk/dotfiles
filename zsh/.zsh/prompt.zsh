@@ -5,5 +5,5 @@ function remote_prompt {
 }
 
 PROMPT='
-%F{green}%5~%f$(remote_prompt)
-%(!.%F{red}.%F{white})λ%f '
+%F{magenta}%n%f @ %F{yellow}%m%f : %F{green}%5~%f
+%(!.%F{red}.%F{white})─╼%f '
