@@ -12,6 +12,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'w0ng/vim-hybrid'
 Plug 'airblade/vim-gitgutter'
+Plug 'ajh17/VimCompletesMe'
 call plug#end()
 " }}}
 " settings {{{
