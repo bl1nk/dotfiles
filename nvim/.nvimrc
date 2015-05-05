@@ -13,6 +13,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'w0ng/vim-hybrid'
 Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe'
+Plug 'klen/python-mode'
 call plug#end()
 " }}}
 " settings {{{
