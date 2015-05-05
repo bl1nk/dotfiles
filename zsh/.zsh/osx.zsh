@@ -14,6 +14,11 @@ if [[ "$OSTYPE" == darwin* ]]; then
     alias q="qlmanage -p $@ >/dev/null 2>&1"
     alias mosh="LANG=en_US.UTF-8 mosh"
     alias vim="nvim"
+    alias bubu="brew update && brew upgrade"
 
     twitch() { livestreamer --player 'mpv --cache 256' http://www.twitch.tv/$1 source; }
+fi
+
+if [[ "$HOST" == myt-* ]]; then
+    export PATH=$PATH:$HOME/Git/ssh-scripts/
 fi
