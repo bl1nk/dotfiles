@@ -14,6 +14,7 @@ Plug 'w0ng/vim-hybrid'
 Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe'
 Plug 'klen/python-mode'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 " }}}
 " settings {{{
@@ -46,10 +47,11 @@ nmap <leader>n   :setlocal nu!<CR>:setlocal rnu!<CR>
 nmap <leader>p   :set paste!<CR>
 nmap <leader>w   :setlocal wrap!<CR>:setlocal wrap?<CR>
 nmap <leader>l   :set list!<CR>
+nmap <leader>]   :PymodeLint<CR>
 nmap <ESC><ESC>  :noh<CR>
 
 " exit insert mode with jj
-imap jj <ESC>
+imap jk <ESC>
 
 " switch between window splits
 nmap <C-J> <C-W><C-J>
