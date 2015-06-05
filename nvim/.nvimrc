@@ -15,6 +15,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe'
 Plug 'klen/python-mode'
 Plug 'junegunn/goyo.vim'
+Plug 'terryma/vim-expand-region'
 call plug#end()
 " }}}
 " settings {{{
@@ -110,4 +111,7 @@ let g:airline_mode_map = {
 			\ 'S'  : 'S',
 			\ '' : 'S',
 			\ }
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 " }}}
