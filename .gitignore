@@ -24,3 +24,6 @@ zsh/.zsh/cache
 mpv/.mpv/watch_later/
 nvim/.nvim/plugged/*
 vim/.vim/plugged/*
+plug.vim.old
+spell
+nvim/.nvim/shada
