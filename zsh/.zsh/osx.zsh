@@ -20,7 +20,11 @@ if [[ "$OSTYPE" == darwin* ]]; then
 fi
 
 if [[ "$HOST" == myt-* ]]; then
-    export PATH=$PATH:$HOME/Git/ssh-scripts/
+    export PATH=$PATH:$HOME/Git/ssh-scripts
     if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
     export PYENV_ROOT=/usr/local/var/pyenv
+    export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+    alias sp="speedtest-cli --share --simple"
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
