@@ -1,5 +1,5 @@
 [user]
-	email = mrkscslr@gmail.com
+	email = hello@markuscisler.com
 	name = Markus Cisler
 [core]
 	autocrlf = input
@@ -30,4 +30,10 @@
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
+	required = true
+[mergetool]
+	keepBackup = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
 	required = true
