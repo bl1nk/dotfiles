@@ -1,5 +1,6 @@
-autoload -U compinit promptinit colors select-word-style url-quote-magic zmv
-zle -N self-insert url-quote-magic
+autoload -Uz compinit promptinit colors select-word-style bracketed-paste-magic url-quote-magic zmv
+zle -N bracketed-paste bracketed-paste-magic
+zle -N self-insert url-quote-magic 
 select-word-style bash
 compinit -i
 promptinit
@@ -14,8 +15,10 @@ setopt extendedglob
 HISTFILE=~/.zsh/histfile
 HISTSIZE=10000
 SAVEHIST=500000
-readonly HISTFILE
+#readonly HISTFILE
 export HISTFILE HISTSIZE SAVEHIST
+# statistics
+REPORTTIME=10
 
 
 # env vars
