@@ -22,8 +22,8 @@ vim/.vim/bundle/*
 zsh/.zsh/cache
 !vim/.vim/bundle/Vundle.git
 mpv/.mpv/watch_later/
-nvim/.nvim/plugged/*
+nvim/.config/nvim/plugged/*
 vim/.vim/plugged/*
 plug.vim.old
 spell
-nvim/.nvim/shada
+nvim/.config/nvim/shada
