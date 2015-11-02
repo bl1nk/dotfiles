@@ -11,7 +11,7 @@ finicky.onUrl(function(url, opts) {
 // that's currently running. If none are running, the first app in the array is started.
 finicky.onUrl(function(url, opts) {
     return {
-        bundleIdentifier: ['com.apple.Safari', 'com.google.Chrome','org.mozilla.firefox']
+        bundleIdentifier: ['com.google.Chrome', 'com.apple.Safari', 'org.mozilla.firefox']
     }
 });
 
