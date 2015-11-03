@@ -3,6 +3,7 @@
 	name = Markus Cisler
 [core]
 	autocrlf = input
+	excludesfile = /Users/m.cisler/.gitignore_global
 [alias]
 	a = add
 	br = branch
