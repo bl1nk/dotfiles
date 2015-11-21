@@ -21,8 +21,8 @@ fi
 
 if [[ "$HOST" == myt-* ]]; then
     export PATH=$PATH:$HOME/Git/ssh-scripts
-    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-    export PYENV_ROOT=/usr/local/var/pyenv
+    #if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+    #export PYENV_ROOT=/usr/local/var/pyenv
     export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
     alias sp="speedtest-cli --share --simple"
