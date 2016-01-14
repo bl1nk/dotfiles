@@ -8,18 +8,19 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe'
 Plug 'bling/vim-airline'
-Plug 'chriskempson/base16-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
 Plug 'klen/python-mode'
 Plug 'pearofducks/ansible-vim'
 Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -27,7 +28,7 @@ call plug#end()
 " settings {{{
 
 set cc=80  " line at column 80
-colo base16-solarized
+colo gruvbox
 set bg=dark
 
 set nu              " line numbers
@@ -110,7 +111,7 @@ if executable('ag')
 endif
 
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'gruvbox'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
