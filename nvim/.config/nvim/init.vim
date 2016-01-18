@@ -7,20 +7,20 @@ call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe'
-Plug 'bling/vim-airline'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
 Plug 'klen/python-mode'
+Plug 'morhetz/gruvbox'
 Plug 'pearofducks/ansible-vim'
 Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -65,7 +65,7 @@ nmap <leader>]   :PymodeLint<CR>
 nmap <leader>s   :w<CR>
 nmap <ESC><ESC>  :noh<CR>
 
-" exit insert mode with jj
+" exit insert mode with jk
 imap jk <ESC>
 
 " switch between window splits
