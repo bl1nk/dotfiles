@@ -5,7 +5,6 @@
 
 call plug#begin()
 
-Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
@@ -13,14 +12,13 @@ Plug 'kien/ctrlp.vim'
 Plug 'klen/python-mode'
 Plug 'morhetz/gruvbox'
 Plug 'pearofducks/ansible-vim'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -52,18 +50,21 @@ set wig+=*/tmp/*,*.so,*.swp,*.zip
 
 " }}}
 " maps {{{
-" set leader to space
 
 nnoremap <Space> <nop>
-let mapleader=" "
+let mapleader="\\"
 
 nmap <leader>n   :setlocal nu!<CR>:setlocal rnu!<CR>
 nmap <leader>p   :set paste!<CR>
 nmap <leader>w   :setlocal wrap!<CR>:setlocal wrap?<CR>
 nmap <leader>l   :set list!<CR>
-nmap <leader>]   :PymodeLint<CR>
 nmap <leader>s   :w<CR>
 nmap <ESC><ESC>  :noh<CR>
+
+" fzf
+nmap <c-p> :Files .<CR>
+nmap <c-b> :Buffers<CR>
+nmap <c-l> :Lines<CR>
 
 " exit insert mode with jk
 imap jk <ESC>
@@ -89,20 +90,6 @@ augroup END
 
 vmap <enter> <plug>(EasyAlign)
 
-let g:ctrlp_map = '<c-p>'
-nmap <leader>b :CtrlPBuffer<cr>
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:100'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " The Silver Searcher
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
@@ -110,37 +97,8 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-let g:airline_powerline_fonts = 0
-let g:airline_theme = 'gruvbox'
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.linenr = 'L'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'PASTE'
-let g:airline_symbols.whitespace = 'Ξ'
-
-let g:airline#extensions#whitespace#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline_mode_map = {
-			\ '__' : '-',
-			\ 'n'  : 'N',
-			\ 'i'  : 'I',
-			\ 'R'  : 'R',
-			\ 'c'  : 'C',
-			\ 'v'  : 'V',
-			\ 'V'  : 'V',
-			\ '' : 'V',
-			\ 's'  : 'S',
-			\ 'S'  : 'S',
-			\ '' : 'S',
-			\ }
-
 let g:ansible_attribute_highlight = "ad"
 let g:ansible_name_highlight = 'b'
 
 " }}}
+
