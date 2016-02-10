@@ -1,4 +1,4 @@
-" $HOME/.nvimrc
+" $HOME/.config/nvim/init.vim
 " bl1nk - http://kuchen.io
 
 " bundles {{{
@@ -8,7 +8,6 @@ call plug#begin()
 Plug 'ajh17/VimCompletesMe'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kien/ctrlp.vim'
 Plug 'klen/python-mode'
 Plug 'morhetz/gruvbox'
 Plug 'pearofducks/ansible-vim'
@@ -25,26 +24,24 @@ call plug#end()
 " }}}
 " settings {{{
 
-set cc=80  " line at column 80
+set cc=80      " line at column 80
 colo gruvbox
 set bg=dark
 
-set nu              " line numbers
-set rnu             " relative line numbers
-set fdm=marker      " fold at markers
-set hid             " close modified buffers
-set scs             " smart case when searching
-set sm              " show matching brackets
-set nobk            " no backup files
-set nowb            " no backups before overwriting
-set noswf           " no swap files
-set dir=/tmp        " directory for tmp files
-set lz              " don't redraw screen while running macros
-set wrap            " softwrap lines
-set cul             " highlight current line
-if v:version > 704 || v:version == 704 && has("patch338")
-    set bri " wraps paragraphs like sublime text
-endif
+set nu         " line numbers
+set rnu        " relative line numbers
+set fdm=marker " fold at markers
+set hid        " close modified buffers
+set scs        " smart case when searching
+set sm         " show matching brackets
+set nobk       " no backup files
+set nowb       " no backups before overwriting
+set noswf      " no swap files
+set dir=/tmp   " directory for tmp files
+set lz         " don't redraw screen while running macros
+set wrap       " softwrap lines
+set cul        " highlight current line
+set bri        " wraps paragraphs like sublime text
 set et ts=4 sw=4 ai
 set wig+=*/tmp/*,*.so,*.swp,*.zip
 
@@ -68,12 +65,6 @@ nmap <c-l> :Lines<CR>
 
 " exit insert mode with jk
 imap jk <ESC>
-
-" switch between window splits
-nmap <C-J> <C-W><C-J>
-nmap <C-K> <C-W><C-K>
-nmap <C-L> <C-W><C-L>
-nmap <C-H> <C-W><C-H>
 
 " start/end of lines
 nmap H ^
