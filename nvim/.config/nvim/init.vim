@@ -5,11 +5,12 @@
 
 call plug#begin()
 
+"Plug 'morhetz/gruvbox'
 Plug 'ajh17/VimCompletesMe'
+Plug 'chriskempson/base16-vim'
+Plug 'hynek/vim-python-pep8-indent'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'klen/python-mode'
-Plug 'morhetz/gruvbox'
 Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
@@ -25,7 +26,7 @@ call plug#end()
 " settings {{{
 
 set cc=80      " line at column 80
-colo gruvbox
+colo base16-solarized
 set bg=dark
 
 set nu         " line numbers
