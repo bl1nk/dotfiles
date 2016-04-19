@@ -40,3 +40,9 @@ for file in ~/.zsh/*.zsh; do
 	source $file
 done
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+_fzf_compgen_path() {
+  ag -g "" "$1"
+}
+
