@@ -21,5 +21,9 @@ if [[ "$OSTYPE" == linux* ]]; then
 		clear #for background artifacting
 	fi
 
+	if [[ "$HOST" == schoko* ]] ; then
+		export PATH="$PATH:/home/markus/.gem/ruby/2.3.0/bin"
+	fi
+
 fi
 
