@@ -23,6 +23,7 @@ if [[ "$OSTYPE" == linux* ]]; then
 
 	if [[ "$HOST" == schoko* ]] ; then
 		export PATH="$PATH:/home/markus/.gem/ruby/2.3.0/bin"
+		export NVIM_TUI_ENABLE_TRUE_COLOR=1
 	fi
 
 fi
