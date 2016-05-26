@@ -7,6 +7,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
     export LC_ALL="en_US.UTF-8"
     export EDITOR="nvim"
     export VISUAL="nvim"
+    export HOMEBREW_NO_ANALYTICS=1
 
     alias ls="ls -Gsh"
     alias lt="ls -tcr"
