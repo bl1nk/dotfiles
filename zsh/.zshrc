@@ -10,7 +10,10 @@ colors
 setopt hist_ignore_space
 setopt append_history
 setopt hist_ignore_dups
+setopt hist_save_no_dups
+setopt hist_reduce_blanks
 setopt share_history
+setopt hist_ignore_all_dups
 setopt extendedglob
 HISTFILE=~/.zsh/histfile
 HISTSIZE=10000
