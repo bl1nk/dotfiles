@@ -51,7 +51,7 @@ set wig+=*/tmp/*,*.so,*.swp,*.zip
 " maps {{{
 
 nnoremap <Space> <nop>
-let mapleader="\\"
+let mapleader="\<Space>"
 
 nmap <leader>n   :setlocal nu!<CR>:setlocal rnu!<CR>
 nmap <leader>p   :set paste!<CR>
