@@ -78,6 +78,10 @@ augroup ft_help
     au FileType help nnoremap q :close<cr>
 augroup END
 
+" Use | and _ to split windows though the latter breaks jump-to-column
+nnoremap <Bar> <C-W>v<C-W><Right>
+nnoremap _ <C-W>s<C-W><Down>
+
 " }}}
 " bundle settings {{{
 
