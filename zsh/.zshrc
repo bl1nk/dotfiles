@@ -48,4 +48,5 @@ done
 _fzf_compgen_path() {
   ag -g "" "$1"
 }
+export FZF_DEFAULT_OPTS='--color 16'
 
