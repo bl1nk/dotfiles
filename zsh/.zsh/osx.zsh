@@ -31,4 +31,7 @@ if [[ "$HOST" == myt-* ]]; then
     pv() { source $HOME/.venv/$1/bin/activate ; }
     alias dup="docker-machine start"
     alias ddown="docker-machine stop"
+
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
 fi
