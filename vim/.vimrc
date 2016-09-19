@@ -5,8 +5,20 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'tpope/vim-surround'
     Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
-    Plug 'dracula/vim'
+    Plug 'chriskempson/base16-vim'
     call plug#end()
+
+    if (empty($TMUX))
+        if has("termguicolors")
+            set termguicolors
+            colo base16-solarized-dark
+        endif
+    endif
+
+    " fzf
+    nmap <c-p> :Files .<CR>
+    nmap <c-b> :Buffers<CR>
+    nmap <c-l> :Lines<CR>
 endif
 
 set cc=80      " line at column 80
@@ -27,18 +39,11 @@ set bri        " wraps paragraphs like sublime text
 set et ts=4 sw=4 ai
 set wig+=*/tmp/*,*.so,*.swp,*.zip
 
-colo dracula
-
 nmap <leader>n   :setlocal nu!<CR>:setlocal rnu!<CR>
 nmap <leader>p   :set paste!<CR>
 nmap <leader>w   :setlocal wrap!<CR>:setlocal wrap?<CR>
 nmap <leader>l   :set list!<CR>
 nmap <ESC><ESC>  :noh<CR>
-
-" fzf
-nmap <c-p> :Files .<CR>
-nmap <c-b> :Buffers<CR>
-nmap <c-l> :Lines<CR>
 
 " exit insert mode with jk
 imap jk <ESC>
