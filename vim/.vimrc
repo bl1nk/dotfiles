@@ -5,15 +5,21 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'tpope/vim-surround'
     Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
+    Plug 'nathanielc/vim-tickscript'
+
     Plug 'chriskempson/base16-vim'
+    Plug 'morhetz/gruvbox'
     call plug#end()
 
     if (empty($TMUX))
         if has("termguicolors")
             set termguicolors
-            colo base16-solarized-dark
+        else
+            let g:gruvbox_termcolors=16
         endif
     endif
+    colo gruvbox 
+    set bg=light
 
     " fzf
     nmap <c-p> :Files .<CR>
