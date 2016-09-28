@@ -11,15 +11,14 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'morhetz/gruvbox'
     call plug#end()
 
-    if (empty($TMUX))
-        if has("termguicolors")
-            set termguicolors
-        else
-            let g:gruvbox_termcolors=16
-        endif
+    " color stuff
+    if has("termguicolors")
+        set termguicolors
+    else
+        let g:gruvbox_termcolors=16
     endif
-    colo gruvbox 
-    set bg=light
+    colo gruvbox
+    set bg=dark
 
     " fzf
     nmap <c-p> :Files .<CR>
