@@ -9,7 +9,8 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'nathanielc/vim-tickscript'
 
     Plug 'chriskempson/base16-vim'
-    Plug 'morhetz/gruvbox'
+    Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/limelight.vim'
     call plug#end()
 
     " color stuff
@@ -18,7 +19,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     else
         let g:gruvbox_termcolors=16
     endif
-    colo base16-solarized-light
+    colo base16-solarized-dark
 
     " fzf
     nmap <c-p> :Files .<CR>
@@ -66,4 +67,8 @@ nnoremap <S-Tab> :bN<cr>
 " Use | and _ to split windows though the latter breaks jump-to-column
 nnoremap <Bar> <C-W>v<C-W><Right>
 nnoremap _ <C-W>s<C-W><Down>
+
+nmap <leader>d :Goyo 80<CR>
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
