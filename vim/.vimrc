@@ -8,7 +8,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
 
     Plug 'nathanielc/vim-tickscript'
 
-    Plug 'chriskempson/base16-vim'
+    Plug 'dracula/vim'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     call plug#end()
@@ -16,10 +16,8 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     " color stuff
     if has("termguicolors")
         set termguicolors
-    else
-        let g:gruvbox_termcolors=16
     endif
-    colo base16-solarized-dark
+    colo dracula
 
     " fzf
     nmap <c-p> :Files .<CR>
@@ -68,6 +66,7 @@ nnoremap <S-Tab> :bN<cr>
 nnoremap <Bar> <C-W>v<C-W><Right>
 nnoremap _ <C-W>s<C-W><Down>
 
+" Enter distraction free writing mode with \d
 nmap <leader>d :Goyo 80<CR>
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
