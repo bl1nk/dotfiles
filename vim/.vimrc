@@ -4,7 +4,8 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-surround'
     Plug 'ajh17/VimCompletesMe'
-    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
 
     Plug 'nathanielc/vim-tickscript'
 
