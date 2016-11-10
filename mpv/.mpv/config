@@ -1,8 +1,8 @@
 # $HOME/.mpv/config
 # bl1nk - http://kuchen.io
 
-geometry=50%:50%
-autofit-larger=75%x75%
+geometry=25%:25%
+autofit-larger=50%x50%
 hwdec = auto
 title="${filename}"
 border=no
