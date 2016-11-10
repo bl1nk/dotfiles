@@ -3,6 +3,7 @@
         {
             "devices": [
                 {
+                    "disable_built_in_keyboard_if_exists": false,
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
