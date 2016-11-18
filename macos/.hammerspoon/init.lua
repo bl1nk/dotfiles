@@ -1,6 +1,6 @@
 hyper = { "cmd", "alt", "shift", "ctrl" }
 k = hs.hotkey.modal.new({}, 'F18')
-hyperBindings = {'q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','SPACE'}
+hyperBindings = {'q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','SPACE', '[', ']', '\\'}
 
 for i,key in ipairs(hyperBindings) do
   k:bind({}, key, nil, function() hs.eventtap.keyStroke(hyper, key)
