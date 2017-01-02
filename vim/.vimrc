@@ -9,7 +9,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
 
     Plug 'nathanielc/vim-tickscript'
 
-    Plug 'dracula/vim'
+    Plug 'chriskempson/base16-vim'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     call plug#end()
@@ -18,7 +18,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     if has("termguicolors")
         set termguicolors
     endif
-    colo dracula
+    colo base16-solarized-dark
 
     " fzf
     nmap <c-p> :Files .<CR>
