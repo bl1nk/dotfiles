@@ -28,4 +28,4 @@ plug.vim.old
 spell
 nvim/.config/nvim/shada
 zsh/.zsh/secret.zsh
-macos/.karabiner.d/log
+macos/.config/karabiner/log
