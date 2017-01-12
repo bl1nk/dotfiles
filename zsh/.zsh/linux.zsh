@@ -22,15 +22,8 @@ if [[ "$OSTYPE" == linux* ]]; then
         alias docker-clean='docker ps -q -f status=exited | xargs --no-run-if-empty docker rm && docker images -q -f dangling=true | xargs --no-run-if-empty docker rmi'
     fi
 
-    # colors in framebuffer
-    if [[ $TERM = "linux" ]]; then
-        ${HOME}/bin/parse_xdefaults.sh
-        clear #for background artifacting
-    fi
-
     if [[ "$HOST" == schoko* ]] ; then
         export PATH="$PATH:/home/markus/.gem/ruby/2.3.0/bin"
-        export NVIM_TUI_ENABLE_TRUE_COLOR=1
     fi
 
 fi
