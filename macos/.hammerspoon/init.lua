@@ -22,3 +22,23 @@ end
 -- Bind the Hyper key
 f19 = hs.hotkey.bind({}, 'F19', pressedF19, releasedF19)
 
+
+-- Automatic Reloading
+function reloadConfig(files)
+  doReload = false
+
+  for _,file in pairs(files) do
+    if file:sub(-4) == ".lua" then
+      doReload = true
+    end
+  end
+
+  if doReload then
+    hs.reload()
+  end
+end
+
+local myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+
+-- Notify user that configuration has been loaded
+hs.alert.show("hammerspoon config loaded")
