@@ -1,13 +1,11 @@
 if [[ "$OSTYPE" == darwin* ]]; then
+    export HOMEBREW_NO_ANALYTICS=1
     export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-
     export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
     export PATH=$PATH:/usr/local/opt/ruby/bin
-
     export LC_ALL="en_US.UTF-8"
     export EDITOR="vim"
     export VISUAL="vim"
-    export HOMEBREW_NO_ANALYTICS=1
 
     alias ls="ls -Gsh"
     alias lt="ls -tcr"
@@ -20,13 +18,13 @@ fi
 
 if [[ "$HOST" == myt-* ]]; then
     export PATH=$PATH:$HOME/git-work/ssh-scripts
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
+    export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 
     alias sp="speedtest-cli --share --simple"
     alias fwfuck="sudo pfctl -d"
+
     pv() { source $HOME/.venv/$1/bin/activate ; }
 
-    export GOPATH=$HOME/go
-    export PATH=$PATH:$GOPATH/bin
-
-    export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 fi
