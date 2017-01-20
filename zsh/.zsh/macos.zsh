@@ -17,7 +17,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
 fi
 
 if [[ "$HOST" == myt-* ]]; then
-    export PATH=$PATH:$HOME/git-work/ssh-scripts
+    export PATH=$PATH:$HOME/mytaxi/ssh-scripts
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
     export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
