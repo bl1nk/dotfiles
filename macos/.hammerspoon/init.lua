@@ -1,22 +1,22 @@
 hyper = { "cmd", "alt", "shift", "ctrl" }
 k = hs.hotkey.modal.new({}, 'F18')
-hyperBindings = {'q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','space', '[', ']', '\\', 'delete'}
+hyperBindings = {'q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','space', '[', ']', '\\', 'delete', 'up', 'down', 'left', 'right'}
 
 for i,key in ipairs(hyperBindings) do
-  k:bind({}, key, nil, function() hs.eventtap.keyStroke(hyper, key)
-    k.triggered = true
-  end)
+    k:bind({}, key, nil, function() hs.eventtap.keyStroke(hyper, key)
+        k.triggered = true
+    end)
 end
 
 -- Enter Hyper Mode when F19 is pressed
 pressedF19 = function()
-  k.triggered = false
-  k:enter()
+    k.triggered = false
+    k:enter()
 end
 
 -- Leave Hyper Mode when F19 is pressed
 releasedF19 = function()
-  k:exit()
+    k:exit()
 end
 
 -- Bind the Hyper key
@@ -25,20 +25,16 @@ f19 = hs.hotkey.bind({}, 'F19', pressedF19, releasedF19)
 
 -- Automatic Reloading
 function reloadConfig(files)
-  doReload = false
+    doReload = false
 
-  for _,file in pairs(files) do
-    if file:sub(-4) == ".lua" then
-      doReload = true
+    for _,file in pairs(files) do
+        if file:sub(-4) == ".lua" then
+            doReload = true
+        end
     end
-  end
 
-  if doReload then
-    hs.reload()
-  end
+    if doReload then
+        hs.reload()
+    end
 end
 
-local myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-
--- Notify user that configuration has been loaded
-hs.alert.show("hammerspoon config loaded")
