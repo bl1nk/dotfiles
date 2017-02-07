@@ -2,5 +2,5 @@
 setopt prompt_subst
 
 PROMPT='
-%{%F{magenta}%}%n%{%f%F{white}%} @ %{%f%F{yellow}%}%m%{%f%F{white}%} : %{%f%F{green}%}%6~%{%f%}
+%{%F{blue}%}%n%{%f%F{white}%} at %{%f%F{yellow}%}%m%{%f%F{white}%} in %{%f%F{magenta}%}%6~%{%f%}
 %{%(!.%F{red}%}#%{.%F{white}%}$%{)%f%} '
