@@ -16,7 +16,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
     twitch() { livestreamer --player 'mpv --cache 256' http://www.twitch.tv/$1 source; }
 fi
 
-if [[ "$HOST" == myt-* ]]; then
+if [[ "$HOST" == andromeda ]]; then
     export PATH=$PATH:$HOME/mytaxi/ssh-scripts
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
