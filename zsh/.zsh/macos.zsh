@@ -24,6 +24,7 @@ if [[ "$HOST" == andromeda ]]; then
 
     alias sp="speedtest-cli --share --simple"
     alias fwfuck="sudo pfctl -d"
+    alias tg="terragrunt"
 
     pv() { source $HOME/.venv/$1/bin/activate ; }
 
