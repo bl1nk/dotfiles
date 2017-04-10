@@ -21,6 +21,7 @@ if [[ "$HOST" == andromeda ]]; then
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
     export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
+    export TERRAGRUNT_TFPATH="$HOME/bin/terraform"
 
     alias sp="speedtest-cli --share --simple"
     alias fwfuck="sudo pfctl -d"
