@@ -23,7 +23,6 @@ export HISTFILE HISTSIZE SAVEHIST
 # statistics
 REPORTTIME=10
 
-
 # env vars
 EDITOR=vim
 VISUAL=vim
@@ -47,5 +46,5 @@ done
 _fzf_compgen_path() {
   rg -g "" "$1"
 }
-export FZF_DEFAULT_OPTS='--color 16'
-
+export FZF_DEFAULT_OPTS='--color 16 --height 40% --reverse --border'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
