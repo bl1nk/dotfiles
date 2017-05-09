@@ -43,10 +43,9 @@ for file in ~/.zsh/*.zsh; do
 	source $file
 done
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 _fzf_compgen_path() {
-  ag -g "" "$1"
+  rg -g "" "$1"
 }
 export FZF_DEFAULT_OPTS='--color 16'
 
