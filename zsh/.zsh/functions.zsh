@@ -30,9 +30,7 @@ function md2pdf() {
 
 # zsh functions {{{
 precmd() {
-    if [[ "$TERM" == xterm* ]] || [[ $TERM == rxvt* ]] || [[ $TERM == ansi ]] || [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
-        printf "\33]2;$USER@$HOST: ${PWD/#$HOME/~}\007" $1
-    fi
+    print -Pn "\e]2;%3d\a"
 }
 
 _rationalise-dot() {
