@@ -12,8 +12,6 @@ if [[ "$OSTYPE" == darwin* ]]; then
     alias llt="l -tcr"
     alias q="qlmanage -p $@ >/dev/null 2>&1"
     alias mosh="LANG=en_US.UTF-8 mosh"
-
-    twitch() { livestreamer --player 'mpv --cache 256' http://www.twitch.tv/$1 source; }
 fi
 
 if [[ "$HOST" == andromeda ]]; then
@@ -21,12 +19,8 @@ if [[ "$HOST" == andromeda ]]; then
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
     export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
-    export TERRAGRUNT_TFPATH="$HOME/bin/terraform"
 
     alias sp="speedtest-cli --share --simple"
     alias fwfuck="sudo pfctl -d"
     alias tg="terragrunt"
-
-    pv() { source $HOME/.venv/$1/bin/activate ; }
-
 fi
