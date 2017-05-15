@@ -24,6 +24,7 @@ if [[ "$OSTYPE" == linux* ]]; then
 
     if [[ "$HOST" == schoko* ]] ; then
         export PATH="$PATH:/home/markus/.gem/ruby/2.3.0/bin"
+        alias cdn='for i in $(\ls -1t /srv/http/io.kuchen.cdn) ; do echo "https://cdn.kuchen.io/${i}" ; done'
     fi
 
 fi
