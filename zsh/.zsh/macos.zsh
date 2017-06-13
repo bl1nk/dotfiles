@@ -14,7 +14,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
     alias mosh="LANG=en_US.UTF-8 mosh"
 fi
 
-if [[ "$HOST" == andromeda ]]; then
+if [[ "$HOST" == pizza ]]; then
     export PATH=$PATH:$HOME/mytaxi/ssh-scripts
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
