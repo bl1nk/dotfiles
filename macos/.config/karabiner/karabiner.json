@@ -25,7 +25,7 @@
                         "product_id": 50475,
                         "vendor_id": 1133
                     },
-                    "ignore": false
+                    "ignore": true
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
