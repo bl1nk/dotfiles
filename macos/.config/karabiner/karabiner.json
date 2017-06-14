@@ -11,7 +11,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change caps_lock to command+control+option+shift.",
+                                "description": "Change f19 to command+control+option+shift.",
                                 "from": {
                                     "key_code": "f19",
                                     "modifiers": {
