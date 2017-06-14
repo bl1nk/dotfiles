@@ -23,3 +23,4 @@ alias mkdir='nocorrect mkdir'
 alias wget='nocorrect noglob wget'
 alias wgetc="wget --content-disposition"
 
+alias tm="if tmux has; then tmux attach -d; else tmux new; fi"
