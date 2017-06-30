@@ -47,6 +47,7 @@ set cul        " highlight current line
 set bri        " wraps paragraphs like sublime text
 set et ts=4 sw=4 ai
 set wig+=*/tmp/*,*.so,*.swp,*.zip
+set clipboard=unnamed
 
 nmap <leader>n   :setlocal nu!<CR>:setlocal rnu!<CR>
 nmap <leader>p   :set paste!<CR>
