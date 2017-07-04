@@ -8,6 +8,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'junegunn/fzf.vim'
 
     Plug 'nathanielc/vim-tickscript'
+    Plug 'plasticboy/vim-markdown'
 
     Plug 'chriskempson/base16-vim'
     Plug 'junegunn/goyo.vim'
@@ -28,6 +29,11 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     nmap <c-p> :Files .<CR>
     nmap <c-b> :Buffers<CR>
     nmap <c-l> :Lines<CR>
+
+    " vim-markdown
+    let g:vim_markdown_folding_disabled = 1
+    let g:vim_markdown_frontmatter = 1
+    let g:vim_markdown_toml_frontmatter = 1
 endif
 
 set cc=80      " line at column 80
