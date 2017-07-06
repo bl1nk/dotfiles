@@ -1,40 +1,48 @@
 [user]
-	email = hello@markuscisler.com
-	name = Markus Cisler
+    email = hello@markuscisler.com
+    name = Markus Cisler
 [core]
-	autocrlf = input
-	excludesfile = /Users/m.cisler/.gitignore_global
+    autocrlf = input
+    excludesfile = /Users/m.cisler/.gitignore_global
 [alias]
-	a = add
-	br = branch
-	cm = commit
-	co = checkout
-	lg = log --all --graph --decorate --oneline --abbrev-commit
-	p = push
-	rem = remote
-	st = status -sb
-	up = "!git remote update -p; git merge --ff-only @{u}"
+    a = !git ls-files --modified --others --exclude-standard -t --directory \
+        | fzf --multi --nth 2 \
+        --preview 'git diff --color=always --histogram -- {-1} | sed 1,4d' \
+        | awk '{ print $2 }' | xargs git add
+    br = branch
+    cm = commit
+    co = checkout
+    lg = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    p = push
+    rem = remote
+    st = status -sb
+    up = "!git remote update -p; git merge --ff-only @{u}"
+    df = !git ls-files --modified | fzf-tmux -m | xargs git diff
 [color]
-	branch = auto
-	diff = auto
-	grep = auto
-	ui = true
+    branch = auto
+    diff = auto
+    grep = auto
+    ui = true
 [diff]
-	tool = vimdiff
+    tool = vimdiff
+[color "diff"]
+    old = red reverse
+    new = green reverse
+
 [push]
-	default = simple
+    default = simple
 [grep]
-	extendRegexp = true
-	lineNumber = true
+    extendRegexp = true
+    lineNumber = true
 [github]
-	user = bl1nk
+    user = bl1nk
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+    clean = git hawser clean %f
+    smudge = git hawser smudge %f
+    required = true
 [mergetool]
-	keepBackup = true
+    keepBackup = true
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
