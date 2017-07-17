@@ -25,10 +25,6 @@
     ui = true
 [diff]
     tool = vimdiff
-[color "diff"]
-    old = red reverse
-    new = green reverse
-
 [push]
     default = simple
 [grep]
