@@ -28,6 +28,12 @@ function md2pdf() {
     pandoc -s $1 -o $1.pdf --smart
 }
 
+function d720p() {
+    for i in $@; do
+        youtube-dl -f 'bestvideo[height<=720]+bestaudio/best[height<=720]' ${i} 
+    done
+}
+
 # zsh functions {{{
 precmd() {
     print -Pn "\e]2;%3d\a"
