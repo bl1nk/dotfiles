@@ -11,6 +11,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'plasticboy/vim-markdown'
 
     Plug 'chriskempson/base16-vim'
+    Plug 'owickstrom/vim-colors-paramount'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     call plug#end()
@@ -23,7 +24,8 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     if (has("termguicolors"))
         set termguicolors
     endif
-    colo base16-solarized-dark
+    "colo base16-monokai
+    color paramount
 
     " fzf
     nmap <c-p> :Files .<CR>
@@ -83,4 +85,7 @@ nnoremap <C-W>- <C-W>s<C-W><Down>
 nmap <leader>d :Goyo 80<CR>
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" pep8
+let python_highlight_all = 1
 
