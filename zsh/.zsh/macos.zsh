@@ -28,3 +28,9 @@ if [[ "$HOST" == pizza ]]; then
     alias sp="speedtest-cli --share --simple"
     alias fwfuck="sudo pfctl -d"
 fi
+
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
+    echo -ne "\033]6;1;bg;red;brightness;44\a"
+    echo -ne "\033]6;1;bg;green;brightness;41\a"
+    echo -ne "\033]6;1;bg;blue;brightness;45\a"
+fi
