@@ -48,3 +48,5 @@ _fzf_compgen_path() {
 }
 export FZF_DEFAULT_OPTS='--color 16 --height 40% --reverse --border'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+[ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
