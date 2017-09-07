@@ -8,7 +8,7 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.to_if_alone_timeout_milliseconds": 1000
+                    "basic.to_if_alone_timeout_milliseconds": 100
                 },
                 "rules": [
                     {
@@ -42,53 +42,91 @@
             "devices": [
                 {
                     "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 588,
                         "vendor_id": 1452
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "simple_modifications": {}
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 50475,
                         "vendor_id": 1133
                     },
-                    "ignore": true
+                    "ignore": true,
+                    "simple_modifications": {}
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 611,
                         "vendor_id": 1452
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "simple_modifications": {}
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 65535,
                         "vendor_id": 1452
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "simple_modifications": {}
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 597,
                         "vendor_id": 1452
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "simple_modifications": {}
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {
+                        "f1": "f1",
+                        "f10": "f10",
+                        "f11": "f11",
+                        "f12": "f12",
+                        "f2": "f2",
+                        "f3": "f3",
+                        "f4": "f4",
+                        "f5": "f5",
+                        "f6": "f6",
+                        "f7": "f7",
+                        "f8": "f8",
+                        "f9": "f9"
+                    },
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 1553,
+                        "vendor_id": 3897
+                    },
+                    "ignore": false,
+                    "simple_modifications": {
+                        "left_command": "left_option",
+                        "left_option": "left_command"
+                    }
                 }
             ],
             "fn_function_keys": {
