@@ -46,7 +46,9 @@ done
 _fzf_compgen_path() {
   rg -g "" "$1"
 }
-export FZF_DEFAULT_OPTS='--color 16 --height 40% --reverse --border'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+export FZF_DEFAULT_OPTS='--color bw --border --no-height --reverse'
+export FZF_CTRL_R_OPTS='--exact --preview "echo {}" --preview-window down:3:hidden:wrap --bind "?:toggle-preview"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
