@@ -14,6 +14,9 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'owickstrom/vim-colors-paramount'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
+
+    "Plug 'airblade/vim-gitgutter'
+    Plug 'nvie/vim-flake8'
     call plug#end()
 
     " color stuff
@@ -36,6 +39,9 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     let g:vim_markdown_folding_disabled = 1
     let g:vim_markdown_frontmatter = 1
     let g:vim_markdown_toml_frontmatter = 1
+
+    " vim-flake8
+    "let g:flake8_show_in_gutter=0
 endif
 
 set cc=80      " line at column 80
