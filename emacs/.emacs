@@ -1,0 +1,108 @@
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+(unless package-archive-contents (package-refresh-contents))
+
+;; Bootstrap use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(setq use-package-always-ensure t)
+
+(use-package smex)
+
+(use-package counsel
+  :init
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  :config
+  (global-set-key (kbd "C-s") 'swiper)
+  (global-set-key (kbd "M-x") 'counsel-M-x)
+  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+  (ivy-mode 1))
+
+(use-package which-key
+  :init
+  (which-key-mode))
+
+(use-package magit
+  :init
+  (global-set-key (kbd "C-x g") 'magit-status))
+
+(use-package doom-themes
+  :ensure t
+  :init
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+	doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  :config
+  (load-theme 'doom-one-light t)
+  (doom-themes-visual-bell-config) ; Enable flashing mode-line on errors
+  )
+
+(use-package org
+  :config
+  (setq org-log-done t))
+
+(use-package projectile
+  :init
+  (setq projectile-completion-system 'ivy)
+  :config
+  (projectile-global-mode))
+;; (projectile-discover-projects-in-directory "/home/henrik/git"))
+
+(use-package company
+  :init
+  (add-hook 'after-init-hook 'global-company-mode))
+
+(use-package weechat
+  :config
+  (setq weechat-host-default "kuchen.io"
+	weechat-port-default 44888
+	weechat-mode-default "ssl"))
+
+(use-package smart-mode-line
+  :init
+  (setq sml/theme 'respectful
+	sml/no-confirm-load-theme t
+	line-number-mode 1
+	column-number-mode 1)
+  (sml/setup))
+
+(use-package golden-ratio
+  :init
+  (setq golden-ratio-auto-scale t)
+  (golden-ratio-mode 1))
+
+(use-package rainbow-delimiters
+  :init
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+
+(setq show-paren-mode t
+      show-trailing-whitespace t
+      size-indication-mode t
+      desktop-restore-eager 10
+      desktop-save (quote if-exists)
+      desktop-save-mode t)
+
+;; move between windows with shift+arrowkeys
+(windmove-default-keybindings)
+
+;; set font
+(add-to-list 'default-frame-alist '(font . "Fira Code-14" ))
+(set-face-attribute 'default t :font "Fira Code-14" )
+
+;; save temporary/backup files in emacs directory
+(setq auto-save-file-name-transforms
+      `((".*" ,(concat user-emacs-directory "auto-save/") t)))
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+		 (concat user-emacs-directory "backups")))))
+
+;; hide startup buffer and scratch buffer comment
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
+(setq initial-scratch-message nil)
