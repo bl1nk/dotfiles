@@ -112,3 +112,6 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
+
+;; yes/no to y/n
+(defalias 'yes-or-no-p 'y-or-n-p)
