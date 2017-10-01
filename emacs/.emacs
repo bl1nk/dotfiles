@@ -46,6 +46,13 @@
   :config
   (setq org-log-done t))
 
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("\\.md\\'" . gfm-mode)
+	 ("\\.markdown\\'" . gfm-mode))
+  :init (setq markdown-command "multimarkdown"))
+
 (use-package projectile
   :init
   (setq projectile-completion-system 'ivy)
