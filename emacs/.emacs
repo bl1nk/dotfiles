@@ -36,12 +36,11 @@
 (use-package doom-themes
   :ensure t
   :init
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-	doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (setq doom-themes-enable-bold t
+	doom-themes-enable-italic t)
   :config
   (load-theme 'doom-one-light t)
-  (doom-themes-visual-bell-config) ; Enable flashing mode-line on errors
-  )
+  (doom-themes-visual-bell-config))
 
 (use-package org
   :config
