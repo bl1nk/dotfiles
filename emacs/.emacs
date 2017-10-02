@@ -25,14 +25,17 @@
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
   (ivy-mode 1))
 
+;; shows help for keybinds
 (use-package which-key
   :init
   (which-key-mode))
 
+;; Git!
 (use-package magit
   :init
   (global-set-key (kbd "C-x g") 'magit-status))
 
+;; okayish looking themes
 (use-package doom-themes
   :ensure t
   :init
@@ -53,6 +56,7 @@
 	 ("\\.markdown\\'" . gfm-mode))
   :init (setq markdown-command "multimarkdown"))
 
+;; Project management
 (use-package projectile
   :init
   (setq projectile-completion-system 'ivy)
