@@ -58,6 +58,8 @@
 	 ("\\.markdown\\'" . gfm-mode))
   :init (setq markdown-command "multimarkdown"))
 
+(use-package terraform-mode)
+
 ;; Project management
 (use-package projectile
   :init
