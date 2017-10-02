@@ -71,12 +71,6 @@
   :init
   (add-hook 'after-init-hook 'global-company-mode))
 
-(use-package weechat
-  :config
-  (setq weechat-host-default "kuchen.io"
-	weechat-port-default 44888
-	weechat-mode-default "ssl"))
-
 (use-package smart-mode-line
   :init
   (setq sml/theme 'respectful
