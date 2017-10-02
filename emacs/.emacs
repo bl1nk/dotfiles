@@ -65,7 +65,7 @@
   :init
   (setq projectile-completion-system 'ivy)
   :config
-  (projectile-global-mode))
+  (projectile-mode))
 
 (use-package company
   :init
