@@ -97,6 +97,9 @@
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
+;; save recent files
+(recentf-mode)
+
 (setq show-paren-mode t
       show-trailing-whitespace t
       size-indication-mode t
