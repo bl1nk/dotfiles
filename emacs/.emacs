@@ -13,8 +13,10 @@
   (package-install 'use-package))
 (setq use-package-always-ensure t)
 
+;; smex sorts M-x by usage
 (use-package smex)
 
+;; counsel pulls ivy and swiper, better M-x and C-x C-f and C-s
 (use-package counsel
   :init
   (setq ivy-use-virtual-buffers t)
