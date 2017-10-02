@@ -66,7 +66,6 @@
   (setq projectile-completion-system 'ivy)
   :config
   (projectile-global-mode))
-;; (projectile-discover-projects-in-directory "/home/henrik/git"))
 
 (use-package company
   :init
