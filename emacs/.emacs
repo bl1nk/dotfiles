@@ -1,3 +1,8 @@
+;;; .emacs --- emacs configuration
+
+;;; Commentary:
+
+;;; Code:
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -105,3 +110,7 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
+
+(provide '.emacs)
+;;; .emacs ends here
+
