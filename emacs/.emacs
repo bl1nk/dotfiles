@@ -119,7 +119,7 @@
 (use-package golden-ratio
   :diminish golden-ratio-mode
   :init
-  (setq golden-ratio-auto-scale t)
+  (setq golden-ratio-auto-scale nil)
   (golden-ratio-mode 1))
 
 ;; save recent files
