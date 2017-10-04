@@ -97,6 +97,9 @@
   :init
   (add-hook 'python-mode-hook 'anaconda-mode))
 
+(use-package company-anaconda
+  :init (add-to-list 'company-backends 'company-anaconda))
+
 (use-package terraform-mode)
 
 ;; Project management
