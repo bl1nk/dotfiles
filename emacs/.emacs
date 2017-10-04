@@ -145,6 +145,7 @@
 
 ;; move between windows with shift+arrowkeys
 (windmove-default-keybindings)
+(bind-key "C-c f" 'toggle-frame-fullscreen)
 
 ;; set font
 (let ((default-font "Fira Code-14"))
