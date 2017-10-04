@@ -147,8 +147,11 @@
 (windmove-default-keybindings)
 
 ;; set font
-(add-to-list 'default-frame-alist '(font . "Fira Code-14" ))
-(set-face-attribute 'default t :font "Fira Code-14" )
+(let ((default-font "Fira Code-14"))
+  (assq-delete-all 'font default-frame-alist)
+  (add-to-list 'default-frame-alist
+	       `(font . ,default-font))
+  (set-frame-font default-font))
 
 ;; save temporary/backup files in emacs directory
 (setq auto-save-file-name-transforms
