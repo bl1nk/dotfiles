@@ -25,9 +25,12 @@
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)))
 
-;; make things like ⌘-h work on a mac
+
 (when (memq window-system '(mac ns x))
-  (setq mac-pass-command-to-system nil))
+  ;; make things like ⌘-h work on a mac
+  (setq mac-pass-command-to-system nil)
+  ;; ligatures for fonts
+  (mac-auto-operator-composition-mode))
 
 ;; needed to hide/rename minor-modes
 (use-package diminish)
