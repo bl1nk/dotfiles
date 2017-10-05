@@ -61,6 +61,9 @@
   :init
   :bind ("C-x g" . magit-status))
 
+;; do not prompt to follow symlinks
+(setq vc-follow-symlinks t)
+
 ;; okay-ish looking theme
 (use-package spacemacs-theme
   :defer t
