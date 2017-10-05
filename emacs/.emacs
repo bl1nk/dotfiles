@@ -82,7 +82,7 @@
   (spaceline-toggle-buffer-position-off)
   (spaceline-toggle-buffer-encoding-abbrev-off)
   (spaceline-compile)
-  (spaceline-spacemacs-theme))
+  (spaceline-emacs-theme))
 
 (use-package rainbow-delimiters
   :init
