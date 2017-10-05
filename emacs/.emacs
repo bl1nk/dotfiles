@@ -158,11 +158,20 @@
   (set-frame-font default-font))
 
 ;; save temporary/backup files in emacs directory
-(setq auto-save-file-name-transforms
-      `((".*" ,(concat user-emacs-directory "auto-save-list/") t)))
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name
-		 (concat user-emacs-directory "backups")))))
+(defvar --backup-directory (concat user-emacs-directory "backups"))
+(if (not (file-exists-p --backup-directory))
+    (make-directory --backup-directory t))
+(setq backup-directory-alist `(("." . ,--backup-directory)))
+(setq make-backup-files t
+      backup-by-copying t
+      version-control t
+      delete-old-versions t
+      delete-by-moving-to-trash t
+      kept-old-versions 6
+      kept-new-versions 9
+      auto-save-default t
+      auto-save-timeout 20
+      auto-save-interval 200)
 
 ;; hide startup buffer and scratch buffer comment
 (setq inhibit-splash-screen t)
