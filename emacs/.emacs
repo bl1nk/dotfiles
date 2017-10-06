@@ -25,7 +25,6 @@
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)))
 
-
 (when (memq window-system '(mac ns x))
   ;; make things like ⌘-h work on a mac
   (setq mac-pass-command-to-system nil)
