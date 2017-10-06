@@ -139,6 +139,9 @@
 ;; save recent files
 (recentf-mode)
 
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
+
 (setq show-paren-mode t
       show-trailing-whitespace t
       size-indication-mode t
