@@ -173,6 +173,15 @@
       auto-save-timeout 20
       auto-save-interval 200)
 
+;; do not store deleted words in kill ring
+(defun backward-delete-word (arg)
+  "Delete characters backward until encountering the beginning of a word.
+With argument ARG, do this that many times."
+  (interactive "p")
+  (delete-region (point) (progn (backward-word arg) (point))))
+(global-set-key (kbd "C-M-<backspace>") 'backward-kill-word)
+(global-set-key (kbd "M-<backspace>") 'backward-delete-word)
+
 ;; hide startup buffer and scratch buffer comment
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
