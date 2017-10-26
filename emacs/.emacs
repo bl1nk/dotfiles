@@ -107,6 +107,15 @@
 
 (use-package terraform-mode)
 
+;; docker
+(use-package docker
+  :commands docker-mode
+  :config
+  (docker-global-mode))
+
+(use-package dockerfile-mode
+  :mode "Dockerfile.*\\'")
+
 ;; Project management
 (use-package projectile
   :diminish projectile-mode "p"
