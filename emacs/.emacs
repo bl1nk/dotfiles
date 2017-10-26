@@ -158,7 +158,7 @@
 (bind-key "C-c f" 'toggle-frame-fullscreen)
 
 ;; set font
-(let ((default-font "Fira Code-14"))
+(let ((default-font "Fira Code-13"))
   (assq-delete-all 'font default-frame-alist)
   (add-to-list 'default-frame-alist
 	       `(font . ,default-font))
