@@ -153,6 +153,8 @@
 
 ;; move between windows with shift+arrowkeys
 (windmove-default-keybindings)
+
+;; fullscreen on C-c f
 (bind-key "C-c f" 'toggle-frame-fullscreen)
 
 ;; set font
