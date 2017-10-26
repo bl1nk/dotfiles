@@ -98,6 +98,23 @@
 	 ("\\.markdown\\'" . gfm-mode))
   :init (setq markdown-command "multimarkdown"))
 
+(use-package deft
+  :commands deft
+  :config
+  (setq deft-extensions '("org" "md")
+	deft-default-extension "org"
+	deft-text-mode 'org-mode
+	deft-directory "~/Dropbox/org"
+	deft-org-mode-title-prefix t
+	deft-recursive t
+	deft-use-filter-string-for-filename t
+	deft-file-naming-rules '((noslash . "-")
+				 (nospace . "-")
+				 (case-fn . downcase)))
+  :bind
+  ("C-c n" . deft)
+  ("C-c C-g" . deft-find-file))
+
 (use-package anaconda-mode
   :init
   (add-hook 'python-mode-hook 'anaconda-mode))
