@@ -191,6 +191,9 @@
     (make-directory --saves-directory t))
 (setq auto-save-file-name-transforms
       `((".*" ,--saves-directory t)))
+
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
 (setq make-backup-files t
       backup-by-copying t
       version-control t
