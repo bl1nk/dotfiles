@@ -186,6 +186,11 @@
 (if (not (file-exists-p --backup-directory))
     (make-directory --backup-directory t))
 (setq backup-directory-alist `(("." . ,--backup-directory)))
+(defvar --saves-directory (concat user-emacs-directory "saves"))
+(if (not (file-exists-p --saves-directory))
+    (make-directory --saves-directory t))
+(setq auto-save-file-name-transforms
+      `((".*" ,--saves-directory t)))
 (setq make-backup-files t
       backup-by-copying t
       version-control t
