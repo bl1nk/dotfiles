@@ -20,7 +20,7 @@ if [[ "$HOST" == pizza ]]; then
     export PATH=$PATH:$GOPATH/bin
     export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 
-    export TERRAGRUNT_TFPATH=/usr/local/bin/terraform_0.10.5
+    export TERRAGRUNT_TFPATH=/usr/local/bin/terraform_0.10.8
 
     # danke für nichts, homebrew
     export PATH="/usr/local/opt/python/libexec/bin:$PATH"
