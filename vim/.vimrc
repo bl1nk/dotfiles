@@ -27,8 +27,8 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     if (has("termguicolors"))
         set termguicolors
     endif
-    "colo base16-monokai
-    color paramount
+    colo base16-solarized-light
+    "color paramount
 
     " fzf
     nmap <c-p> :Files .<CR>
