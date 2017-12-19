@@ -18,7 +18,6 @@ if [[ "$HOST" == pizza ]]; then
     export PATH=$PATH:$HOME/mytaxi/ssh-scripts
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
-    export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 
     export TERRAGRUNT_TFPATH=/usr/local/bin/terraform_0.10.8
 
