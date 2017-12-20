@@ -37,6 +37,8 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[00;32m'
 
+fpath=( "$HOME/.zsh/fpath" $fpath )
+
 # configuration files
 for file in ~/.zsh/*.zsh; do
 	source $file
