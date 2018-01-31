@@ -54,3 +54,8 @@ export FZF_CTRL_R_OPTS='--exact --preview "echo {}" --preview-window down:3:hidd
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
+
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+ 
