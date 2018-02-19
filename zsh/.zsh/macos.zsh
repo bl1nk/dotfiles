@@ -19,8 +19,6 @@ if [[ "$HOST" == pizza ]]; then
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
 
-    export TERRAGRUNT_TFPATH=/usr/local/bin/terraform_0.11.2
-
     # danke für nichts, homebrew
     export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
