@@ -7,16 +7,8 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
 
-    Plug 'nathanielc/vim-tickscript'
-    Plug 'plasticboy/vim-markdown'
+    Plug 'robertmeta/nofrils'
 
-    Plug 'chriskempson/base16-vim'
-    Plug 'owickstrom/vim-colors-paramount'
-    Plug 'junegunn/goyo.vim'
-    Plug 'junegunn/limelight.vim'
-
-    "Plug 'airblade/vim-gitgutter'
-    Plug 'nvie/vim-flake8'
     call plug#end()
 
     " color stuff
@@ -27,8 +19,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     if (has("termguicolors"))
         set termguicolors
     endif
-    colo base16-solarized-light
-    "color paramount
+    colo nofrils-acme
 
     " fzf
     nmap <c-p> :Files .<CR>
