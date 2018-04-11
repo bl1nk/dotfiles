@@ -7,4 +7,3 @@ bindkey "^[[7~" beginning-of-line # Pos1
 bindkey "^[[8~" end-of-line # End
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
-
