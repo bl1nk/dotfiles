@@ -1,5 +1,6 @@
 alias ls='ls -sh --color=auto'
 alias ll='ls -l'
+alias l='ll'
 alias lt='ll -tr'
 alias la='ls -a'
 alias lla='ll -a'
