@@ -12,8 +12,12 @@ alias v='vim '
 
 alias g='git'
 alias gco='git checkout'
-alias gcm='git commit -m "$@"'
+alias gc='git commit'
 alias gp='git push'
+alias gu='git up'
+alias gs='git status'
+alias gl='git lg'
+alias gla='git lg --all'
 
 alias mkdir='nocorrect mkdir'
 alias wget='nocorrect noglob wget'
