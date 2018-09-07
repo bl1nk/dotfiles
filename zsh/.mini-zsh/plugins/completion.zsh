@@ -18,3 +18,5 @@ zstyle ':completion:*' rehash yes
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle -e ':completion:*:approximate:*' max-errors \
        'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
+
+fpath=(/usr/local/share/zsh-completions $fpath)
