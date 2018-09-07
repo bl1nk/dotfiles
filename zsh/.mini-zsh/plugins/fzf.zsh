@@ -1,9 +1,9 @@
 if (( $+commands[fzf] ))
 then
-    FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+    FZF_DEFAULT_OPTS='--color bw'
+    FZF_DEFAULT_COMMAND='fd --type f'
     FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-    FZF_DEFAULT_OPTS='--no-height --no-reverse --color bw'
     export FZF_DEFAULT_COMMAND FZF_CTRL_T_COMMAND FZF_ALT_C_COMMAND FZF_DEFAULT_OPTS
 
     if [[ $- == *i* ]]
