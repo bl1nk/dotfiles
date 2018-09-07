@@ -4,27 +4,33 @@
 [core]
     autocrlf = input
     excludesfile = /Users/m.cisler/.gitignore_global
+  	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
-    a = !git ls-files --modified --others --exclude-standard -t --directory \
-        | fzf --multi --nth 2 \
-        --preview 'git diff --color=always --histogram -- {-1} | sed 1,4d' \
-        | awk '{ print $2 }' | xargs git add
-    br = branch
-    cm = commit
-    co = checkout
-    lg = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    p = push
-    rem = remote
-    st = status -sb
     up = "!git remote update -p; git merge --ff-only @{u}"
-    df = !git ls-files --modified | fzf-tmux -m | xargs git diff
 [color]
-    branch = auto
-    diff = auto
     grep = auto
-    ui = true
+	ui = true
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
 [diff]
     tool = vimdiff
+    renames = copies
 [push]
     default = simple
 [grep]
@@ -32,13 +38,20 @@
     lineNumber = true
 [github]
     user = bl1nk
-[filter "hawser"]
-    clean = git hawser clean %f
-    smudge = git hawser smudge %f
-    required = true
-[mergetool]
-    keepBackup = true
-[filter "lfs"]
-    clean = git-lfs clean %f
-    smudge = git-lfs smudge %f
-    required = true
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[diff-so-fancy]
+	useUnicodeRuler = false
+	stripLeadingSymbols = true
