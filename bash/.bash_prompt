@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+GIT_DIRTY='*'
+GIT_CLEAN=''
+GIT=$(which git 2>/dev/null)
+
+function parse_git_dirty {
+  if $GIT diff-index --quiet HEAD; then
+    echo -e "$GIT_CLEAN"
+  else
+    echo -e "$GIT_DIRTY"
+  fi
+}
+
+# Make branch and dirty status in prompt
+function git_prompt_info {
+  ref=$($GIT symbolic-ref HEAD 2> /dev/null) || return
+  echo -e " ${ref#refs/heads/}$(parse_git_dirty)"
+}
+
+RESET=$(echo -en '\033[0m')
+RED=$(echo -en '\033[00;31m')
+GREEN=$(echo -en '\033[00;32m')
+YELLOW=$(echo -en '\033[00;33m')
+BLUE=$(echo -en '\033[00;34m')
+MAGENTA=$(echo -en '\033[00;35m')
+PURPLE=$(echo -en '\033[00;35m')
+CYAN=$(echo -en '\033[00;36m')
+LIGHTGRAY=$(echo -en '\033[00;37m')
+LRED=$(echo -en '\033[01;31m')
+LGREEN=$(echo -en '\033[01;32m')
+LYELLOW=$(echo -en '\033[01;33m')
+LBLUE=$(echo -en '\033[01;34m')
+LMAGENTA=$(echo -en '\033[01;35m')
+LPURPLE=$(echo -en '\033[01;35m')
+LCYAN=$(echo -en '\033[01;36m')
+WHITE=$(echo -en '\033[01;37m')
+
+# Highlight the user name when logged in as root.
+if [[ "${USER}" == "root" ]]; then
+	promptChar="\[${LRED}\]\# ";
+else
+	promptChar="\[${RESET}\]\$ ";
+fi;
+
+# Highlight the hostname when connected via SSH.
+if [[ "${SSH_TTY}" ]]; then
+	hostStyle="\[${LRED}\]\h\[${RESET}\]:";
+else
+	hostStyle="";
+fi;
+
+# Set the terminal title and prompt.
+PS1="\[\033]0;\W\007\]\n"; # working directory base name
+PS1+="${hostStyle}"; # host
+PS1+="\[${LGREEN}\]\w"; # working directory full path
+PS1+="\[${YELLOW}\]\$(git_prompt_info)"; # Git repository details
+PS1+="\n";
+PS1+="${promptChar}";
+export PS1;
+
+PS2="\[${CYAN}\]→ \[${RESET}\]";
+export PS2;

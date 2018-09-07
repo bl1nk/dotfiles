@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Use Git’s colored diff when available
+hash git &>/dev/null;
+if [ $? -eq 0 ]; then
+	function diff() {
+		git diff --no-index --color-words "$@";
+	}
+fi;
+
+
+## search history with ctrl-r and fzy
+#bind '"\C-r": "\C-x1\e^\er"'
+#bind -x '"\C-x1": __fzy_history';
+#
+#__fzy_history () {
+#    __fff $(history | sort -k2 | uniq -f 1 | sort | tac | fzy | perl -ne 'm/^\s*([0-9]+)/ and print "!$1"')
+#}
+#
+#__fff() {
+#    if
+#            [[ -n $1 ]]
+#    then
+#            bind '"\er": redraw-current-line'
+#            bind '"\e^": magic-space'
+#            READLINE_LINE=${READLINE_LINE:+${READLINE_LINE:0:READLINE_POINT}}${1}${READLINE_LINE:+${READLINE_LINE:READLINE_POINT}}
+#            READLINE_POINT=$(( READLINE_POINT + ${#1} ))
+#    else
+#            bind '"\er":'
+#            bind '"\e^":'
+#    fi
+#}
