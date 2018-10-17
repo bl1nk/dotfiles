@@ -16,7 +16,3 @@ swap() {
         return 1
     fi
 }
-
-latest_cdn () {
-    ssh markus@schoko.kuchen.io 'for f in $(\ls -1t /srv/http/io.kuchen.cdn) ; do echo "https://cdn.kuchen.io/${f}" ; done' | head -n5
-}
