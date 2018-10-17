@@ -7,6 +7,8 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
 
+    Plug 'junegunn/vim-easy-align'
+
     Plug 'itchyny/lightline.vim'
 
     Plug 'robertmeta/nofrils'
@@ -92,4 +94,7 @@ let python_highlight_all = 1
 
 " lightline
 let g:lightline = { 'colorscheme': 'powerline', 'mode_map': { 'n': "N", 'i': "I", 'R': "R", 'v' : 'V', 'V' : 'VL', "\<C-v>": 'VB' } }
+
+" Align GitHub-flavored Markdown tables
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
