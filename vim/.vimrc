@@ -7,6 +7,8 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
 
+    Plug 'itchyny/lightline.vim'
+
     Plug 'robertmeta/nofrils'
     Plug 'NLKNguyen/papercolor-theme'
 
@@ -87,4 +89,7 @@ autocmd! User GoyoLeave Limelight!
 
 " pep8
 let python_highlight_all = 1
+
+" lightline
+let g:lightline = { 'colorscheme': 'powerline', 'mode_map': { 'n': "N", 'i': "I", 'R': "R", 'v' : 'V', 'V' : 'VL', "\<C-v>": 'VB' } }
 
