@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # source: http://bewatermyfriend.org/p/2012/003/
 # Load compsys and one of its fancy modules
 zmodload zsh/complist

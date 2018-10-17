@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 if (( $+commands[exa] ))
 then
     alias ls='exa'

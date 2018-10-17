@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 export HOMEBREW_NO_ANALYTICS=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
