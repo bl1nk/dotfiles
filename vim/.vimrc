@@ -14,6 +14,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'robertmeta/nofrils'
     Plug 'NLKNguyen/papercolor-theme'
 
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
     call plug#end()
 
