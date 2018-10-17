@@ -43,6 +43,7 @@ alias gs='git status'
 alias gl='git log --all --decorate --oneline --graph'
 alias glp='git log --all --decorate --oneline --graph -p'
 alias gla='git lg --all'
+alias gpr='git pull --rebase'
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
