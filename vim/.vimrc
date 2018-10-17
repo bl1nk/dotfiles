@@ -8,6 +8,8 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'junegunn/fzf.vim'
 
     Plug 'robertmeta/nofrils'
+    Plug 'NLKNguyen/papercolor-theme'
+
 
     call plug#end()
 
@@ -19,7 +21,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     if (has("termguicolors"))
         set termguicolors
     endif
-    colo nofrils-acme
+    colo PaperColor
 
     " fzf
     nmap <c-p> :Files .<CR>
