@@ -80,9 +80,9 @@ nnoremap <Tab> :bn<cr>
 nnoremap <S-Tab> :bN<cr>
 
 " Use | and _ to split windows though the latter breaks jump-to-column
-nnoremap <Bar> <C-W>v<C-W><Right>
-nnoremap - <C-W>s<C-W><Down>
-nnoremap <C-W><Bar> <C-W>v<C-W><Right>
+nnoremap <leader>/ <C-W>v<C-W><Right>
+nnoremap <leader>- <C-W>s<C-W><Down>
+nnoremap <C-W>/ <C-W>v<C-W><Right>
 nnoremap <C-W>- <C-W>s<C-W><Down>
 
 " Enter distraction free writing mode with \d
