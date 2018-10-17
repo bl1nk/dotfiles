@@ -1,10 +1,16 @@
 if (( $+commands[fzf] ))
 then
-    FZF_DEFAULT_OPTS='--color bw'
-    FZF_DEFAULT_COMMAND='fd --type f'
+    FZF_DEFAULT_OPTS="--layout=reverse --color=bw"
     FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_DEFAULT_COMMAND FZF_CTRL_T_COMMAND FZF_ALT_C_COMMAND FZF_DEFAULT_OPTS
+
+    if (( $+commands[fd] ))
+    then
+        export FZF_DEFAULT_COMMAND='fd --type f'
+    fi
+
+
 
     if [[ $- == *i* ]]
     then
