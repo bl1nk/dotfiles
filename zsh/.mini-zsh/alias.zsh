@@ -5,7 +5,7 @@ alias lla='ll -a'
 
 alias sudo='sudo '
 
-alias tm="tmux attach -d || tmux"
+alias tm="tmux -u attach -d || tmux -u"
 alias td='tmux detach'
 
 alias v='vim '
