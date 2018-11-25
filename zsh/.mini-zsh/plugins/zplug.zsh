@@ -12,7 +12,7 @@ if ((${#ZPLUG_HOME[@]})); then
     source $ZPLUG_HOME/init.zsh
 
     zplug mafredri/zsh-async, from:github
-    zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+    zplug "agkozak/agkozak-zsh-prompt"
 
     if ! zplug check; then
         printf "Install plugins with zplug? [y/N]: "
@@ -20,6 +20,14 @@ if ((${#ZPLUG_HOME[@]})); then
             echo; zplug install
         fi
     fi
+
+    AGKOZAK_CUSTOM_PROMPT='%(?..%B%F{red}(%?%)%f%b )'
+    AGKOZAK_CUSTOM_PROMPT+='%(!.%S%B.%B%F{green})%n%1v%(!.%b%s.%f%b) '
+    AGKOZAK_CUSTOM_PROMPT+=$'%B%F{blue}%2v%f%b'
+    AGKOZAK_CUSTOM_PROMPT+=$'%(3V.%F{yellow}%3v%f.)\n'
+    AGKOZAK_CUSTOM_PROMPT+='$(_agkozak_vi_mode_indicator) '
+
+    AGKOZAK_CUSTOM_RPROMPT=''
 
     # Then, source plugins and add commands to $PATH
     zplug load
