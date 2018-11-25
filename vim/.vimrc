@@ -4,17 +4,17 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-surround'
     Plug 'ajh17/VimCompletesMe'
+
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'sheerun/vim-polyglot'
+
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
 
     Plug 'junegunn/vim-easy-align'
 
-    Plug 'itchyny/lightline.vim'
-
     Plug 'robertmeta/nofrils'
     Plug 'NLKNguyen/papercolor-theme'
-
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
     call plug#end()
 
