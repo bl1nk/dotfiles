@@ -2,6 +2,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-sensible'
     Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-unimpaired'
     Plug 'tpope/vim-surround'
     Plug 'ajh17/VimCompletesMe'
 
