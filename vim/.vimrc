@@ -28,6 +28,7 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
         set termguicolors
     endif
     colo PaperColor
+    set bg=dark
 
     " fzf
     nmap <c-p> :Files .<CR>
