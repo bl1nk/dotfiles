@@ -17,6 +17,10 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
     Plug 'robertmeta/nofrils'
     Plug 'NLKNguyen/papercolor-theme'
 
+    Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/limelight.vim'
+
+
     call plug#end()
 
     " color stuff
