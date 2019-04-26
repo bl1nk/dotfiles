@@ -1,6 +1,7 @@
 [user]
     name = Markus Cisler
     email = hello@markuscisler.com
+	useConfigOnly = true
 [core]
     autocrlf = input
     # Speed up commands involving untracked files such as `git status`.
