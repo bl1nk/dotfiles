@@ -60,3 +60,5 @@
     markEmptyLines = false
 [diff "gpg"]
     textconv = gpg --no-tty --decrypt
+[commit]
+	verbose = true
