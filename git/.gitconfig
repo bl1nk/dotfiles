@@ -1,65 +1,65 @@
 [user]
-    name = Markus Cisler
-    email = hello@markuscisler.com
+	name = Markus Cisler
 	useConfigOnly = true
+	email = hello@markuscisler.com
 [core]
-    autocrlf = input
-    # Speed up commands involving untracked files such as `git status`.
-    # https://git-scm.com/docs/git-update-index#_untracked_cache
-    untrackedCache = true
-    pager = diff-so-fancy | less --tabs=4 -RFX
+	autocrlf = input
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [pager]
-    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+	diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 
 [alias]
-    up = "!git remote update -p; git merge --ff-only @{u}"
+	up = "!git remote update -p; git merge --ff-only @{u}"
 [color]
-    grep = auto
-    ui = true
+	grep = auto
+	ui = true
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-    meta = yellow
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    commit = yellow bold
-    whitespace = red reverse
+	meta = yellow
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [diff]
-    tool = vimdiff
-    renames = copies
+	tool = vimdiff
+	renames = copies
 [push]
-    default = simple
+	default = simple
 [grep]
-    extendRegexp = true
-    lineNumber = true
+	extendRegexp = true
+	lineNumber = true
 [github]
-    user = bl1nk
+	user = bl1nk
 [apply]
-    # Detect whitespace errors when applying a patch
-    whitespace = fix
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
 [help]
-    # Automatically correct and execute mistyped commands
-    autocorrect = 1
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
 [merge]
-    # Include summaries of merged commits in newly created merge commit messages
-    log = true
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
 [color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
 [diff-so-fancy]
-    useUnicodeRuler = false
-    stripLeadingSymbols = false
-    markEmptyLines = false
+	useUnicodeRuler = false
+	stripLeadingSymbols = false
+	markEmptyLines = false
 [diff "gpg"]
-    textconv = gpg --no-tty --decrypt
+	textconv = gpg --no-tty --decrypt
 [commit]
 	verbose = true
