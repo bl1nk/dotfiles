@@ -10,15 +10,12 @@ alias td='tmux detach'
 
 alias v='vim '
 
-alias g='git'
 alias gco='git checkout'
-alias gc='git commit'
 alias gp='git push'
-alias gu='git up'
 alias gs='git status'
-alias gl='git log --all --decorate --oneline --graph'
-alias glp='git log --all --decorate --oneline --graph -p'
-alias gla='git lg --all'
+alias gl='git log -15 --oneline --decorate'
+alias gll='git log --graph --pretty=oneline --abbrev-commit --decorate'
+alias glp='gll -p'
 alias gpr='git pull --rebase'
 
 alias mkdir='nocorrect mkdir'
