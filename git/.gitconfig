@@ -59,6 +59,7 @@
 	useUnicodeRuler = false
 	stripLeadingSymbols = false
 	markEmptyLines = false
+	rulerWidth = 47
 [diff "gpg"]
 	textconv = gpg --no-tty --decrypt
 [commit]
