@@ -1,16 +1,23 @@
 function fish_prompt
+    set -l last_status $status
+
     echo
-    _exit_code
+    _status $last_status
     _pwd
     _git
     _kubecontext
 
     echo
-    _jobs
     _mode
+end
 
-    set_color normal
-    echo -n ' '
+function _status
+    if test $argv -ne 0
+        set_color red
+        echo -n $argv
+        set_color normal
+        echo -n ' '
+    end
 end
 
 function _pwd
@@ -31,31 +38,30 @@ function _git
     end
 end
 
-function _jobs
-    set jobs (job_count)
-    if test $jobs -gt 0
-        set_color red
-        echo -n "%$jobs "
-    end
-end
 function _mode
+    set -l char
+    set -l color
     switch $fish_bind_mode
         case default
-            set_color magenta
-            echo -n ':'
+            set color magenta
+            set char ':'
         case insert
-            set_color magenta
-            echo -n '$'
+            set color magenta
+            set char '$'
         case replace_one
-            set_color yellow
-            echo -n '$'
+            set color yellow
+            set char ':'
         case visual
-            set_color blue
-            echo -n '$'
+            set color blue
+            set char ':'
         case '*'
-            set_color normal
-            echo -n '$'
+            set color normal
+            set char '$'
     end
+    set_color $color
+    echo -n $char
+    set_color normal
+    echo -n ' '
 end
 
 function _kubecontext
@@ -64,12 +70,5 @@ function _kubecontext
         echo -n (kubectx -c)
         set_color normal
         echo -n ' '
-    end
-end
-
-function _exit_code
-    if not is_status_okay
-        set_color red
-        echo -n '!'
     end
 end
