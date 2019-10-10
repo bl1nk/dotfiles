@@ -15,10 +15,6 @@ if command -sq nvim
 end
 set -gx PAGER less
 
-if test -d $__fish_config_dir/conf.d
-    source $__fish_config_dir/conf.d/*
-end
-
 if test -r $HOME/.fish.local
     source $HOME/.fish.local
 end
