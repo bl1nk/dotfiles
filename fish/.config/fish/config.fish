@@ -1,3 +1,4 @@
+# Install fisher
 if not functions -q fisher
     set -q XDG_CONFIG_HOME
     or set XDG_CONFIG_HOME ~/.config
@@ -5,16 +6,33 @@ if not functions -q fisher
     fish -c fisher
 end
 
-set -x EDITOR vim
-set -x VISUAL vim
+set -gx fish_greeting ""
+set -gx EDITOR vim
+set -gx VISUAL vim
 if command -sq nvim
-    set -x EDITOR nvim
-    set -x VISUAL nvim
+    set -gx EDITOR nvim
+    set -gx VISUAL nvim
 end
-set -x PAGER less
+set -gx PAGER less
 
-if test -d $__fish_config_dir/conf.d
-    source $__fish_config_dir/conf.d/*
+switch (uname)
+    case Darwin
+        set -l brew_gnu_coreutils_path (brew --prefix coreutils)/libexec/gnubin
+        if test -d $brew_gnu_coreutils_path
+            set -g fish_user_paths $brew_gnu_coreutils_path $fish_user_paths
+        end
+
+        set -gx GPG_TTY (tty)
+    case OpenBSD
+        set -g LC_CTYPE en_US.UTF-8
+        set -g LC_MESSAGES en_US.UTF-8
+
+        if command -sq colorls
+            alias ls='colorls -GFh'
+        end
+        alias tmux='tmux -2 -u'
 end
 
-source $__fish_config_dir/os.fish
+if test -f $HOME/.config.fish.local
+    source $HOME/.config.fish.local
+end
