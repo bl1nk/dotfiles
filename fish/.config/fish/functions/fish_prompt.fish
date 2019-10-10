@@ -21,9 +21,11 @@ function _status
 end
 
 function _pwd
-    set_color cyan
+    set_color -o cyan
     # echo -n (basename (pwd | sed "s#$HOME#\~#"))
-    echo -n (prompt_pwd)' '
+    echo -n (prompt_pwd)
+    set_color normal
+    echo -n ' '
 end
 
 function _git
@@ -31,7 +33,7 @@ function _git
         set_color --underline
     end
     if is_git
-        set_color yellow
+        set_color green
         echo -n (git_branch)
         set_color normal
         echo -n ' '
@@ -66,7 +68,7 @@ end
 
 function _kubecontext
     if command -sq kubectx
-        set_color blue
+        set_color 777
         echo -n (kubectx -c)
         set_color normal
         echo -n ' '
