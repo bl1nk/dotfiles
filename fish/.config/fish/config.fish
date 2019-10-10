@@ -15,24 +15,10 @@ if command -sq nvim
 end
 set -gx PAGER less
 
-switch (uname)
-    case Darwin
-        set -l brew_gnu_coreutils_path (brew --prefix coreutils)/libexec/gnubin
-        if test -d $brew_gnu_coreutils_path
-            set -g fish_user_paths $brew_gnu_coreutils_path $fish_user_paths
-        end
-
-        set -gx GPG_TTY (tty)
-    case OpenBSD
-        set -g LC_CTYPE en_US.UTF-8
-        set -g LC_MESSAGES en_US.UTF-8
-
-        if command -sq colorls
-            alias ls='colorls -GFh'
-        end
-        alias tmux='tmux -2 -u'
+if test -d $__fish_config_dir/conf.d
+    source $__fish_config_dir/conf.d/*
 end
 
-if test -f $HOME/.config.fish.local
-    source $HOME/.config.fish.local
+if test -r $HOME/.fish.local
+    source $HOME/.fish.local
 end

@@ -1,9 +1,16 @@
-# A lambda (λ) prompt.
-# Green and red depending on exit status.
-# Underlined if git status is dirty.
-# Uppercase (Λ) if ahead of the remote.
+function fish_prompt
+    echo
+    _exit_code
+    _pwd
+    _git
+    _kubecontext
 
-function fish_mode_prompt
+    echo
+    _jobs
+    _mode
+
+    set_color normal
+    echo -n ' '
 end
 
 function _pwd
@@ -66,19 +73,3 @@ function _exit_code
         echo -n '!'
     end
 end
-
-function fish_prompt
-    echo
-    _exit_code
-    _pwd
-    _git
-    _kubecontext
-
-    echo
-    _jobs
-    _mode
-
-    set_color normal
-    echo -n ' '
-end
-
