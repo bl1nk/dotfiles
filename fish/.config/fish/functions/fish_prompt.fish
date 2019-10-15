@@ -67,9 +67,9 @@ function _mode
 end
 
 function _kubecontext
-    if command -sq kubectx
+    if command -sq kubectl
         set_color 777
-        echo -n (kubectx -c)
+        echo -n (kubectl config current-context)
         set_color normal
         echo -n ' '
     end
