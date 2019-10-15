@@ -48,3 +48,4 @@ if [[ -d "$PLUGINS" ]]; then
 fi
 
 [[ -r "${HOME}/.zshrc.local" ]] && . "${HOME}/.zshrc.local"
+
