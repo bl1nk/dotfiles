@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
-if (( $+commands[pass] ))
-then
+if (( ${+commands[pass]} )); then
     alias ppr='pass git pull --rebase'
 
     EXTENSIONS_DIR=/usr/local/lib/password-store/extensions

@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
-
-if (( $+commands[cargo] ))
-then
+if (( $+commands[cargo] )); then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
