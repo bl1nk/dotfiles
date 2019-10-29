@@ -5,7 +5,7 @@ bindkey -v
 # allow v to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey -M vicmd 'v' edit-command-line
+bindkey -M vicmd '^v' edit-command-line
 
 # edit command line with opt-e
 bindkey -M vicmd '\ee' edit-command-line
