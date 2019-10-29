@@ -21,7 +21,7 @@ function _status
 end
 
 function _pwd
-    set_color -o cyan
+    set_color -o blue
     # echo -n (basename (pwd | sed "s#$HOME#\~#"))
     echo -n (prompt_pwd)
     set_color normal
