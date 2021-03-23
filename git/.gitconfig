@@ -69,3 +69,6 @@
 
 [delta "no-syntax"]
 	syntax-theme = none
+
+[include]
+	path = ~/.gitconfig.local
