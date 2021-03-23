@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-# stuff & url quoting
-autoload -Uz compaudit compinit url-quote-magic
-zle -N self-insert url-quote-magic
 
 # make C-w delete until /
 WORDCHARS='*?_-.[]~=&!#$%^(){}<>'
