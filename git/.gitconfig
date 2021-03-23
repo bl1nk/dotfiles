@@ -31,8 +31,9 @@
 	changed = green
 	untracked = cyan
 [diff]
-	tool = vimdiff
+	tool = nvim -d
 	renames = copies
+	colorMoved = default
 [push]
 	default = simple
 [grep]
