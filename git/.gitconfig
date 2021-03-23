@@ -55,6 +55,9 @@
 [commit]
 	verbose = true
 
+[gitget]
+	root = ~/src
+
 [delta]
 	features = line-numbers decorations no-syntax
 	whitespace-error-style = 22 reverse
