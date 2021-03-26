@@ -46,7 +46,7 @@ function _mode
     switch $fish_bind_mode
         case default
             set color magenta
-            set char ':'
+            set char '$'
         case insert
             set color magenta
             set char '$'
